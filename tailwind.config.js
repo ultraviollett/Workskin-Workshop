@@ -1,9 +1,11 @@
 module.exports = {
+  darkMode: 'class',
   content: [
     './public/index.{html,js}',
     './public/**/*.{html,js}',
   ],
   theme: {
+    
     extend: {
       colors: {
         'light': '#fffad5',
@@ -21,7 +23,7 @@ module.exports = {
         'md': '850px',
         // => @media (min-width: 768px) { ... }
   
-        'lg': '1024px',
+        'lg': '824px',
         // => @media (min-width: 1024px) { ... }
   
         'xl': '1280px',

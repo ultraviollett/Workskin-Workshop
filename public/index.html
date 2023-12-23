@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,21 +13,23 @@
   <script async src="https://us.umami.is/script.js" data-website-id="a83fd8ce-547f-48e8-8ec9-c030c31bf933"></script>
   
 </head>
-<body class="bg-light">
-<div class="flex flex-wrap justify-around bg-black-300 m-2">
+<body class="bg-slate-100 text-bluedark dark:bg-bluedark dark:text-light ">
 
-  <div class="w-full lg:w-1/2 md:w-1/2 max-w-2xl bg-slate-200 p-3">
+  <hr class="m-4 border-solid border-2 border-bluedark dark:border-light" >
+<div class="flex flex-wrap justify-around bg-black-300 m-2 max-w-5xl mx-auto">
 
-  <div class="w-full p-0 py-3 justify-center bg-red-300">
+  <div class="w-full lg:w-1/2 p-3">
+
+  <div class="w-full p-0 py-3 justify-center">
     <p class=" text-lg font-bold px-5">WELCOME TO THE</p>
-  <h1 class="text-center titlecard py-2">Workskin <br>Workshop</h1>
+  <h1 class="text-center titlecard py-2 text-black dark:text-white">Workskin <br>Workshop</h1>
   </div>
-  <button class="button-big-default" onclick="window.location.href = 'tutorial.html';"><h2>How does this work?<h2></button>
+  <button class="button-big-default" onclick="window.location.href = 'tutorial.html';"><h2>How does this work?</h2></button>
 
   <input type="checkbox" id="show-unfinished" onclick="showUnfinished()" class="justify-end">
-    <label for="show-unfinished"> Show Broken / Unfinished Generators </label>
+    <label for="show-unfinished" class="text-xs text-right"> Show Broken / Unfinished Generators </label>
 </div>
-<div class="w-full lg:w-1/2 md:w-1/2 max-w-2xl bg-green-200 p-3">
+<div class="w-full lg:w-1/2 p-3">
     <h2> Currently available:</h2>
 
       <button class="button-big-default" onclick="window.location.href = 'imsg.html';">iMessage Texting Generator</button>
@@ -48,21 +50,17 @@
 
       <button class="button-big-default" onclick="window.location.href = 'tblr.html';">Tumblr Post Generator</button>
 
-    
-<a href="test.html">test page</a></p>
+      <a href="test.html">test page</a></p>
     </div>
     
-    <br>
-    <h2>Want me to add a workskin? Something not working? Anything I should know / could help you with?</h2>
+    <p></p>
+    <p class="mt-5">Want me to add a workskin? Something not working? Anything I should know / could help you with?</p>
     <p><button class="button-big-default" onclick="window.location.href = 'contactform.html';">Contact me</button></p>
     </div>
     </div>
     
-    <p>
-    
-    
-    
-    </p>
+    <hr class="m-4 bottom-4 left-0 right-0 absolute border-solid border-2 border-bluedark dark:border-light" >
+
 </div>
 </div>
 <script src="JS/index.js"></script>
