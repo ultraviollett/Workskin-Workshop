@@ -1,22 +1,22 @@
 
 @font-face {
   font-family: "header font";
-  src: url(../../sparky-stones-font/SparkyStonesRegular-BW6ld.ttf) format("truetype");
+  src: url(./fonts/sparky-stones-font/SparkyStonesRegular-BW6ld.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "p font";
-  src: url(../../Libre_Baskerville/LibreBaskerville-Regular.ttf) format("truetype");
+  src: url(./fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "p font bold";
-  src: url(../../Libre_Baskerville/LibreBaskerville-Bold.ttf) format("truetype");
+  src: url(./fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "p font italics";
-  src: url(../../Libre_Baskerville/LibreBaskerville-Italic.ttf) format("truetype");
+  src: url(./fonts/Libre_Baskerville/LibreBaskerville-Italic.ttf) format("truetype");
 }
 
 h1 { 
