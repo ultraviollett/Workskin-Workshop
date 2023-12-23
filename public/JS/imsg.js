@@ -383,7 +383,7 @@ function compileCode(addNew = true){
     //addNew is true by default, but if it is false that means that only small things are changing,
     //and are usually changes in the surrounding div
 
-    var x;
+    var x = "";
         
     let newName = addNew ? switchName() : "";
 
