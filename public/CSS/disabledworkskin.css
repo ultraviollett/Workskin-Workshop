@@ -1,0 +1,33 @@
+
+#output-div{
+    width: vw;
+max-width: 23cm;
+margin: auto;
+background-color: rgb(255, 255, 255);
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color: black;
+padding: 2em 2vw;
+text-wrap: wrap;
+
+}
+
+#output-div pre{
+    text-wrap: wrap;
+}
+
+#output-div::after{
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus dolor, dictum non efficitur at, ultricies sit amet nisi. Etiam quis molestie nunc, sed tempus lectus. Curabitur molestie malesuada ex sed facilisis. Duis tempor quis turpis quis interdum. Proin non metus sed ipsum aliquet lacinia. Sed eu est varius, viverra.";
+    display: block;
+    opacity: 60%;
+    -webkit-mask-image: linear-gradient(180deg, #000000ca 0%, #00000034);
+
+}
+
+#output-div::before{
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus dolor, dictum non efficitur at, ultricies sit amet nisi. Etiam quis molestie nunc, sed tempus lectus. Curabitur molestie malesuada ex sed facilisis. Duis tempor quis turpis quis interdum. Proin non metus sed ipsum aliquet lacinia. Sed eu est varius, viverra.";
+    display: block;
+    opacity: 60%;
+    -webkit-mask-image: linear-gradient(0deg, #000000ca 0%, #00000034);
+
+}
+

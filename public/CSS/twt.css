@@ -1,0 +1,511 @@
+.twt .screenreader {
+
+position: absolute;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+white-space: nowrap;
+border: 0;
+}
+
+/*I've added a div called twtdiv that is only meant to 
+help with the twt:firstchild last child thing
+
+without it, the first tweet ever and the last tweet ever will be marked, meaning multiple 
+tweets in a fic would become more difficult for me to provide
+*/
+
+
+
+
+.twtdiv{
+  width: 85vw;
+  max-width: 20cm;
+  margin: 1em auto;
+  border: 2px solid #84848477;
+  border-radius: 10px;
+}
+
+.twt {
+padding: 1vw;
+border-bottom: 2px solid #84848477;
+border-top:0;
+line-height: 1;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+.twt:last-child{
+  border-bottom: none;
+}
+
+.twtdiv p{
+margin: 0px auto;
+line-height: 1.3;
+line-break:auto;
+}
+
+.twt div{
+margin: 0;
+padding: 0;
+}
+
+.twt ul{
+  padding: 0;
+}
+
+/* Ive added some hr's for visibility when theres no workskin*/
+.twtdiv hr{
+  display: none;
+
+}
+
+.twtdiv blockquote{
+  margin: 0;
+  margin-inline-start: 0;
+  border-inline-start: rgb(0,0,0,0) 0px solid;
+  padding: 0;
+  background-color: rgb(0,0,0,0);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+
+}
+
+/*
+STYLIZATION
+*/
+
+/*different twitter colours*/
+.twtdiv.light{
+background-color: white;
+color: black;
+}
+
+.twtdiv.dark{
+background-color: black;
+color: white;
+}
+
+
+/*another twitter style, a minimal feel*/
+.twtdiv.minimal{
+  border: none;
+}
+
+.twtdiv.minimal:first-child{
+  border: none;
+}
+
+/*
+HEADER
+*/
+
+.twt .header{
+  display: block;
+  padding-bottom: 0;
+  display: block;
+  text-wrap:nowrap;
+  overflow: hidden;
+
+}
+
+.twt .header div{
+  display: inline-block;
+
+}
+
+.twt .header .name-handle-div{
+  margin: 5px auto 1em 10px;
+  vertical-align: top;
+  max-width: 50%;
+  word-break: keep-all;
+
+
+}
+
+.twt .header img{
+visibility: visible;
+display:inline-block;
+border-radius: 50%;
+width: 50px;
+height: 50px;
+}
+
+.twt .icon-div img{
+border-radius: 50%;
+width: 50px;
+height: 50px;
+width: 100%;
+height: 100%;
+overflow: hidden;
+}
+
+.twt .name:hover {
+text-decoration: underline;
+}
+
+.twt .handle {
+font-size: small;
+font-weight: normal;
+opacity: 67%
+}
+
+.twt .header::after{
+/*oh no not float*/
+  float: right;
+  content: url('https://images.squidge.org/images/2023/12/16/ellipsis-svgrepo-com1.png');
+  background-size: 100%;
+  transform: scale(4.5%);
+  width: 0;
+  height: 0;
+  margin-right: 30px;
+
+}
+
+
+
+/*
+BODY
+*/
+
+.twt .text{
+font-size: 1.2em;
+margin: 5px 0.5em;
+}
+
+.twt .text p{
+  margin-bottom: 1em;
+}
+
+.twt .text::after{
+  display: block;
+  
+  background-color:currentColor;
+  opacity: 25%;
+  height: 1.5px;
+  content: "";
+  margin: 15px 0 0 0;
+}
+
+
+
+.twt .timestamp {
+opacity: 60%;
+font-size: small;
+margin: 0.8em auto 0 0.5em;
+
+}
+
+/*
+Mentions
+*/
+
+.twt .mention{
+  color:rgba(0, 172, 240, 0.89);
+
+}
+
+.twt .mention:hover{
+  text-decoration: underline;
+}
+/*
+FOOTER
+*/
+
+.twt table {
+  table-layout: fixed;
+  width: 100%;
+  
+  opacity: 70%;
+  font-size: small;
+  margin: 10px auto 0px auto;
+  font-weight: bold;
+}
+
+.twt table:hover{
+  background-color: none;
+}
+.twt td{
+  text-align: center;
+  
+
+}
+
+.twt td p{
+  display: inline-block;
+  padding: 0 0 0 25px;
+  width: min-content;
+}
+
+.reply-twt td{
+  text-align: left;
+}
+
+
+
+.twt table p::before{
+  float: left;
+  width: 0px;
+  height: 0px;
+  margin-top: 0px;
+  margin-left: -25px;
+  transform: scale(50%);
+  margin-bottom: 16px;
+}
+
+
+
+.twt table .reply p::before{
+  content: url("https://images.squidge.org/images/2023/12/09/replies.png");  
+}
+
+/*the retweets a different size from the rest, who knows why*/
+.twt table .retweet p::before{
+  content: url("https://images.squidge.org/images/2023/12/09/retweets.png");
+  margin-left: -29px;
+  margin-bottom: 17px;
+  transform: scale(42%);
+}
+
+
+.twt table .like p::before{
+  content:  url("https://images.squidge.org/images/2023/12/09/likes.png");
+}
+
+/*
+REPLY
+*/
+
+
+.reply-twt .icon-div {
+display: table-cell;
+width: 50px;
+vertical-align: top;
+}
+
+.reply-twt .icon-div img{
+  display: table-cell;
+  margin: 0 1vw;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  
+  vertical-align: top;
+  }
+
+.reply-twt .reply-body {
+display: table-cell;
+padding-left: 2vw;
+
+text-overflow:ellipsis;
+}
+
+.twt .reply-to{
+  margin: 3px 0;
+  font-size: 0.9em;
+  opacity: 70%;
+}
+.twt .handle-link {
+color: #1DA1F2;
+}
+
+.twt .handle-link:hover {
+text-decoration: underline;
+
+}
+
+.reply-twt .reply-body .text{
+  margin: 0.5em auto;
+}
+
+.reply-twt .reply-body .text::after{
+  display: none;
+  content: "";
+}
+
+.twt .reply-body::before{
+  /*oh no not float*/
+    float: right;
+    content: url('https://images.squidge.org/images/2023/12/16/ellipsis-svgrepo-com1.png');
+    background-size: 100%;
+    transform: scale(4.5%);
+    width: 0;
+    height: 0;
+    margin-right: 30px;
+    margin-top: -5px;
+  
+  }
+
+/*
+QUOTE TWEET
+*/
+
+.twt .quote-div {
+  line-height: 1;
+padding: 5px 1vw;
+border: 2px solid #8484845d;
+border-radius: 10px;
+margin-top: 0.3em;
+
+
+}
+
+.twt .quote-div .text::after{
+  display: none;
+}
+
+.reply-twt .quote-div .icon-div{
+  width: auto;
+}
+
+.twt .quote-div .header{
+  display: block;
+  text-wrap:nowrap;
+  overflow: hidden;
+}
+
+.twt .quote-div .header div, .twt .quote-div .header p{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.twt .quote-div p{
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.twt .quote-div .icon-div img{
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.twt .quote-div .name-handle-div{
+  padding-right: 1em;
+}
+
+/*get rid of the ellipsis in main and reply tweet*/
+.twt .quote-div .header::after{  content: ""; }
+
+/*
+IMAGE
+*/
+
+.twt-image>img{
+width: 96%;
+display: block;
+background-color: #c7c7c7;
+border: 1px solid #c7c7c7;
+border-radius: 10px;
+
+margin: 1em auto;
+overflow: hidden;
+line-height: 0;
+}
+
+
+
+
+/*Polls*/
+
+.twt .poll ul{
+margin: 2px auto;
+}
+
+.twt .poll li{
+
+  list-style-type: none none;
+  margin-block-start: 0em;
+  margin-inline-end: 0;
+  margin-block-end: 0em;
+  margin-inline-start: 0em;
+  display: block;
+  color: rgba(0, 172, 240, 0.89);
+  font-weight: bold;
+  font-size: 0.95em;
+  border: 1.2px solid rgba(0, 172, 240, 0.89);
+  border-radius: 25px;
+  margin: 5px 0.5vw;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+
+}
+
+
+
+
+.twt .answered li{
+  background-color: #84848400;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  color: unset;
+  font-weight: normal;
+  padding-left: 2em;
+  overflow: hidden;
+  text-wrap: nowrap;
+
+}
+.twt .poll .winner{
+  background-color: #1DA1F2;
+}
+
+.twt .answered .percent--1{
+  background: linear-gradient(90deg, #9babb956 0%, #9babb956 50%, rgb(0,0,0,0) 0%, rgb(0,0,0,0) 100%);
+}
+
+.twt .answered .percent--1-winner{
+  background: linear-gradient(90deg, #1da0f29b 0%, #1DA1F29b 50%, rgb(0,0,0,0) 0%, rgb(0,0,0,0) 100%);
+}
+
+
+.twt .answered .percent--2{
+  background: linear-gradient(90deg, #9babb956 0%, #9babb956 20%, rgb(0,0,0,0) 0%, rgb(0,0,0,0) 100%);
+}
+
+
+.twt .answered .percent--3{
+  background: linear-gradient(90deg, #9babb956 0%, #9babb956 30%, rgb(0,0,0,0) 0%, rgb(0,0,0,0) 100%);
+}
+
+
+
+.twt .answered .percent--4{
+  background: linear-gradient(90deg, #717d8826 0%, #9babb956 10%, rgb(0,0,0,0) 0%, rgb(0,0,0,0) 100%);
+}
+
+
+
+.twt .poll .poll-info{
+  display: block;
+  border: none;
+  text-align:justify;
+  background-color: unset;
+  color: currentColor;
+  opacity: 70%;
+  font-weight: normal;
+  font-size: smaller;
+  padding-left: 15px;
+  margin: 0;
+}
+
+.twt .poll img{
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.2em;
+  width: 1.2em;
+  margin: -5px auto 0 auto;
+}
+
+.twt .poll .percent--text{
+  float: right;
+  font-size: 0.9em;
+  overflow: hidden;
+  text-wrap: nowrap;
+
+}
+

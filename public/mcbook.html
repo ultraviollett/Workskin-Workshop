@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW Book Generator</title>
+    <link rel="stylesheet" href="CSS/input.css">
+    <link rel="stylesheet" href="CSS/mcbook.css" id="ao3-workskin">
+    <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  </head>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
+    <body>
+<button class="nav" onclick="window.location.href = '../index.html';">back</button>
+
+<div class="note">
+  <br><br><br>
+  <p>NOTES:</p>
+<li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/125098090">here</a>! I am the creator</li>
+
+</li>
+</div>
+
+<div class="easy-to-read easy-to-read-start">
+
+
+
+<textarea type="text" id="input-text" class="large-input big-text" oninput="addText()" placeholder="Input Text here">
+</textarea>
+
+
+<div id="toggle-div">
+  <label class="switch">
+  <input type="checkbox" onclick="disableWorkskin()" id="disable-workskin">
+  <span class="slider"></span>
+  </label>
+  <label for="disable-workskin"><span id="disable-workskin-label">Workskin Enabled</span></label>
+</div>
+
+</div>
+
+
+
+<br>
+
+
+<div id="output-div">
+
+<div class="mcbook" align="center">
+<p class="screenreader" align="center"><small> -- Minecraft Book: -- </small></p>
+<hr>
+<p>
+Dear Diary,
+<br><br>
+This is an example text to demonstrate this minecraft book.
+<br><br>
+Once you add text to the input box, it will appear here.
+
+</p>
+<hr>
+</div>
+
+</div>
+
+<div class="easy-to-read">
+<div class="html-box copy-box">
+<button id="copy-html-button"  >Copy HTML</button>
+<textarea class="large-input" type="text" id = "html-output">
+Your HTML will appear here
+</textarea>
+</div>
+<br>
+
+<div class="css-box copy-box">
+  
+<button id="copy-css-button">Copy CSS</button>
+<!--I've added some JS so this textarea grabs the text from mcpoem.txt-->
+<textarea class="large-input" type="text" id = "css-to-copy">
+</textarea>
+</div>
+</div>
+
+<script src="JS/gen.js"></script> 
+<script src="./JS/mcbook.js"></script> 
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW Message Generator</title>
+    <link rel="stylesheet" href="CSS/simplemsg.css" id="ao3-workskin">
+    <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
+    <link rel="stylesheet" href="CSS/input.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+  </head>
+    <body>
+<button class="nav" onclick="window.location.href = '../index.html';">back</button>
+
+<div class="note">
+  <br><br><br>
+  <p>NOTES:</p>
+  <li>There is currently no option to add names. That will be added in other messaging text I will add</li>
+  <li>I am the creator of this workskin, but I haven't published it anywhere online</li>
+  <li>Refresh the page to start over</li>
+</div>
+
+
+
+<div class="easy-to-read easy-to-read-start">
+<p></p>
+<textarea type="text" id="input-text" class="large-input big-text" placeholder="Input text here">
+</textarea>
+
+
+<fieldset>
+<legend>Pick Side:</legend>
+<div><input type="radio" id="leftchoose" name="contact" checked/><label for="leftchoose">Left</label>
+<input type="radio" id="rightchoose" name="contact"/><label for="rightchoose">Right</label> </div>
+</fieldset>
+
+<button id="add">Add</button>
+
+<div id="toggle-div">
+  <label class="switch">
+  <input type="checkbox" onclick="disableWorkskin()" id="disable-workskin">
+  <span class="slider"></span>
+  </label>
+  <label for="disable-workskin"><span id="disable-workskin-label">Workskin Enabled</span></label>
+</div>
+  
+</div>
+
+<br>
+<div id="output-div">
+
+  <p class="screenreader"><small> -- Text Messages: -- </small></p>
+  <div class="simplemsg">
+  <hr>
+  <p class="screenreader"><small> right text:</small></p>
+  <p class = "right " align = "right">
+  Wow! what a nice and unubtrusive workskin!
+  </p>
+  <p class="screenreader"><small> left text:</small></p>
+  <p class = "left " align = "left">
+  *unobtrusive
+  </p>
+  <p class="screenreader"><small> left text:</small></p>
+  <p class = "left " align = "left">
+  Notice how the font color is white right now? If you paste it onto ao3 and you have light mode on, it will turn dark. It will follow the colors of whatever site skin you're using
+  </p>
+  <p class="screenreader"><small> left text:</small></p>
+  <p class = "left " align = "left">
+  Also, there is no option to add names for this one. with the workskin disabled, the texts are on the same side they're supposed to be, and are labeled "right/left text:" for screenreaders.
+  </p>
+  <p class="screenreader"><small> right text:</small></p>
+  <p class = "right " align = "right">
+  Feel free to add the names of your characters manually :D
+  </p>
+  <p class="screenreader"><small> right text:</small></p>
+  <p class = "right " align = "right">
+  if you want a groupchat, use the iMessage workskin, or there may be other skins in the future!
+  </p><hr>
+  </div>
+
+</div>
+
+
+
+
+<div class="easy-to-read">
+<div class="html-box copy-box">
+  <button id="copy-html-button"  >Copy HTML</button>
+  <textarea class="large-input autoresizing" type="text" id = "html-output">
+  Your HTML will appear here
+  </textarea>
+  </div>
+
+  
+  <div class="css-box copy-box">
+    
+  <button id="copy-css-button" class="autoresizing" >Copy CSS</button>
+  <textarea class="large-input" type="text" id = "css-to-copy">
+  </textarea>
+  </div>
+</div>
+<script src="JS/gen.js"></script> 
+<script src="./JS/simplemsg.js"></script> 
+</body>
+</html>

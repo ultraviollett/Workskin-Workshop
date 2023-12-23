@@ -1,0 +1,43 @@
+
+.screenreader {
+  position: absolute;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mcbook{
+  display: block;
+  background-image: url("img/bookbg.png");
+  text-align:center;
+  background-position: center;
+  background-repeat:no-repeat;
+  margin: auto;
+  background-size: 100% 100%;
+  padding: 1em 3em 5em 3em;
+
+  overflow-y: auto;
+
+  width: 60vw;
+  height: 74vw;
+  max-width: 250px;
+  max-height: 308px;
+
+  color: black;
+}
+
+pre{
+  font: unset;
+  text-wrap: wrap;
+  word-break: break-all;
+  width: 100%;
+  font-weight: 200;
+}
+
+.mcbook hr{
+  display: none;
+}

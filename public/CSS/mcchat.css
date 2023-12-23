@@ -1,0 +1,127 @@
+.mcchat{
+  padding: 7em 0.5em 1em 0.5em;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+.mcchat .screenreader {
+  position: absolute;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mcchat hr{
+  opacity: 0;
+  display: none;
+}
+
+.mcchat.nobg{
+  padding-top: 1em;
+}
+
+.mcchat.sun, .mcchat.bg1 {
+    background-image: url("https://images.squidge.org/images/2023/08/23/BG1.png");
+  }/*plainest background, sky and the sun*/
+  
+.mcchat.clouds, .mcchat.bg2 {
+    background-image: url("https://images.squidge.org/images/2023/08/23/BG3.png");
+}/*clouds*/
+
+.mcchat.mumbo-base, .mcchat.bg3 {
+    background-image: url("https://images.squidge.org/images/2023/08/23/BG2.jpeg");
+  }/*mumbos fancy build*/
+
+.mcchat.buildings, .mcchat.bg4 {
+    background-image: url("https://images.squidge.org/images/2023/08/23/BG5.jpeg");
+  }/*nice looking urban build*/
+
+.mcchat.lmanhole, .mcchat.bg5 {
+    background-image: url("https://images.squidge.org/images/2023/08/23/BG4.png");
+}/*nightime in lmanhole*/
+  
+.mcchat.evo-end{
+  background-image: url("https://images.squidge.org/images/2022/09/20/image.png");
+}/*end portal with watcher symbol*/
+
+.mcchat.evo-platform{
+  background-image: url("https://images.squidge.org/images/2022/09/17/image107962b927faaf4f.png");
+}/*watcher platform from evo i think*/
+
+.mcchat.redstone{
+  background-image: url("https://images.squidge.org/images/2022/09/14/image1154e1f73c546b1d.png");
+}/*redstone miscellaneous outside*/
+
+.mcchat.glass-walls{
+  background-image: url("https://images.squidge.org/images/2022/09/14/image8d7548f36e716576.png");
+}/*glass walls sunset*/
+
+.mcchat.ocean{
+  background-image: url("https://images.squidge.org/images/2022/09/14/image.png");
+}/*ocean view daytime*/
+
+.mcchat.nether-portal{
+  background-image: url("https://images.squidge.org/images/2022/09/07/2022-09-07_17.48.21.png");
+}/*nether portal in cave*/
+
+.mcchat.village-in-forest{
+  background-image: url("https://images.squidge.org/images/2022/09/06/2022-09-06_23.17.28.png");
+}/**/
+
+.mcchat.storage{
+  background-image: url("https://images.squidge.org/images/2022/09/17/image.png");
+}/*storage*/
+
+.mcchat.in-ocean{
+  background-image: url("https://images.squidge.org/images/2023/12/20/inocean.png");
+}/*in deep ocean*/
+
+.mcchat.add-bg-1{
+  background-image: url("");
+}/**/
+
+.mcchat>p {
+  margin: 0;
+  padding: .15em 3em .15em .5em;
+  color: white;
+  background: rgba(0, 0, 0, .6);
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+  line-height: 1.5;
+  width: 70%;
+  max-width: 17cm;
+}
+
+.mcchat .joinleft{
+  color: #ff0;
+}/*for the joined/left styled text*/
+
+.mcchat .whisper {
+  color: gray;
+  font-style:italic
+}/*for the whisper styled text*/
+
+/*whole bunch of other colours*/
+.mcchat .green{ color: rgb(24, 240, 24)}
+.mcchat .yellow{ color: yellow}
+.mcchat .red{ color: red}
+
+.mcchat .orange{ color: orange}
+.mcchat .blue{color: rgb(63, 192, 235)}
+.mcchat .purple{color: rgb(158, 73, 255)}
+.mcchat .pink{color: rgb(255, 112, 165)}
+.mcchat .grey{color: grey}
+
+
+
+.mcchat.fade p:nth-of-type(1){
+  opacity: .3;
+}
+.mcchat.fade p:nth-of-type(2){
+  opacity: .7;
+}/*for the two messages to fade out if there are 7 or more messages*/
+

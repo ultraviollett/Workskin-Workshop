@@ -1,0 +1,177 @@
+.tableofcontentsdiv{
+    display: block;
+    background-color: unset;
+    margin: 6px auto;
+    width: 80vw;
+    max-width: 15cm;
+    padding: 0;
+  }
+
+.tableofcontents{
+    box-shadow: inset 2px -28px 21px -21px #154e34;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    
+    width: fit-content;
+    background: rgb(135,187,162);
+    background: var(--lightval);
+    padding: 10px 0 18px 10px;
+    border: 4px solid var(--middleval);
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    margin: auto 20px -15px -5vw;
+}
+
+
+
+  .tableofcontents p{
+    margin: 0;
+    line-height: 0;
+  
+  }
+  .tableofcontents a, .tableofcontents h3{
+    font-size:0.9em;
+    color:#174061;
+    display: block;
+    text-decoration: none;
+    padding: 0.3em 40px;
+    margin: 0 0 0 -10px;
+    line-height: 1;
+    overflow: hidden;
+  }
+
+.tableofcontents h3{
+    font-size: large;
+    color: black;
+}
+  
+.tableofcontents a:hover{
+  display: block;
+  color:#03009d;
+  background-color: #579c8e;
+  }
+  
+/*make buttons look nice*/
+.buttonhorizontal{
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    width: 100%;
+
+    gap: 5px;
+    flex-flow: row wrap;
+
+}
+
+.buttonhorizontal button{
+    font-size: small;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 0;
+
+    display: block;
+    cursor: pointer;
+    padding: auto;
+    flex-grow: 1;
+    
+}
+
+
+/*
+for coding demos
+*/
+.codedemo{
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    margin: 10px -5vw;
+    grid-template-rows: 1.2em auto;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    border: 2px solid var(--lighterval);
+    
+    
+}
+
+.appendcodedemo{ 
+    /*apologies for the shit code. 
+    Theoretically Id make this work automatically lol*/
+    margin-top: -10px;
+    border-top: none;
+}
+
+.codedemo div{
+    display: flex;
+    flex-direction: column;
+    justify-content: bottom;
+    text-align: center;
+    align-content:space-around;
+    padding: auto 5px;
+}
+.codedemo p{
+    margin: auto;
+    padding: 8px  5px;
+    line-height: 1.3;
+    align-content:space-around;
+}
+
+.codedemo .header{
+    background-color: rgb(113, 113, 113);
+    font-size: medium;
+    color: white;
+    margin: auto 0;
+    
+}
+.codedemo .header p{
+    margin: 0;
+    padding: 0;
+}
+
+.codedemo>.HTMLcoding{
+    background-color: rgb(209, 209, 209);
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.codedemo>.CSScoding{
+    background-color: rgb(179, 179, 179);
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.codedemo>.text{
+    background-color: rgb(217, 243, 217);
+
+}
+
+.codedemo .highlight{
+    background-color: rgba(255, 250, 205, 0.629);
+    border-radius: 5px;
+    padding: 0px 2px;
+}
+
+.codedemo .pinkbox{
+    display: inline-block;
+    background-color: pink;
+    padding: 5px;
+    margin: auto;
+    
+}
+
+.simplemsgexample{
+    display: inline-block;
+    border: 2px solid black;
+    background-color: white;
+    padding: 5px;
+    width: fit-content;
+    margin: auto 5px;
+    border-radius: 12px;
+    border-bottom-left-radius: 0;
+}
+
+
+#usingworkshop li{
+    font-weight: bold;
+    font-size: larger;
+}

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW Poem Generator</title>
+    <link rel="stylesheet" href="CSS/tblr.css" id="ao3-workskin">
+    <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
+    <link rel="stylesheet" href="CSS/input.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+  </head>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
+    <body>
+<button class="nav" onclick="window.location.href = '../index.html';">back</button>
+
+<div class="note">
+  <br><br><br>
+  <p>NOTES:</p>
+<li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/98981022#workskin">here</a>! I am the creator</li>
+<li>I am planning to make it so you can pick any colour with a colour picker to add to the text,
+  if you want to do so currently, there are instructions on the AO3 page linked above
+</li>
+<li>Use the Disable Workskin button to see how your HTML looks without its workskin</li>
+<li>Refresh the page to start over</li>
+</div>
+
+<div class="easy-to-read easy-to-read-start">
+
+  <fieldset>
+    <input type="checkbox" id="header-choose" class="larger">
+    <label for="time-choose">Add 'Reblogged' Header?</label>
+  </fieldset>
+
+<div class="inline tumblr">
+<textarea id="input-username-reblogged" placeholder="Perseus"></textarea> 
+<p> Reblogged </p>
+<textarea id="input-username-reblogged" placeholder="Medusa"></textarea>
+</div>
+<br><br>
+<textarea type="url" class="long-input snuggledown" id="icon" placeholder="Input asker's icon URL"></textarea>
+
+<select id="iconchoose" class="nice-dropdown snuggleup" onchange="pasteIconURL(document.getElementById('icon'),$('#iconchoose').val())">
+  <option>or choose icon here</option>
+
+  <option>Steve Minecraft</option>
+  <option>Alex Minecraft</option>
+  <option>Herobrine Minecraft</option>
+
+  <option>Walter White Breaking Bad</option>
+  <option>Hatsune Miku Vocaloid</option>
+  <option>X3 face</option>
+
+  <option>Sunflowers Van Gogh</option>
+  <option>Mona Lisa</option>
+  <option>Einstein with Tongue</option>
+
+  <option>Hong Kong Night</option>
+  <option>Railroad</option>
+  <option>Shark Sandcastle</option>
+  <option>Highway Drive</option>
+
+</select>
+<br>
+<textarea type="text" id="input-username" class="required" placeholder="Input Username">
+</textarea>
+
+
+<fieldset>
+  <input type="checkbox" id="time-choose">
+  <label for="time-choose">Add Time<span id="posted"> Posted</span>?</label>
+</fieldset>
+
+<div id="time-div">
+<div class="inline">
+<input type="number" id="input-time-num" class="small-input" placeholder="12">
+<fieldset>
+<select id="input-time-unit">
+  <option>minutes</option>
+  <option>hours</option>
+  <option>days</option>
+  <option>weeks</option>
+  <option>years</option>
+  <option>decades</option>
+</select> 
+</fieldset>
+<p>ago</p>
+</div>
+<br><br>
+</div>
+
+
+<textarea type="text" id="input-text" class="large-input required" placeholder="Input text of post">
+</textarea>
+<fieldset>
+  <input type="checkbox" id="image-choose"><label for="image-choose"> Add Image?</label>
+  <input type="checkbox" id="image-choose"><label for="image-choose"> Add Poll?</label>
+  <input type="checkbox" id="image-choose"><label for="image-choose"> Add Ask?</label>
+  <input type="checkbox" id="image-choose"><label for="image-choose"> Add Paragraph Break?</label>
+</fieldset>
+
+<div id="image-opt">
+
+<textarea type="url" id="input-url" class="long-input required" placeholder="Input image URL">
+</textarea>
+
+<textarea type="text" id="input-alt" class="largeish-input" placeholder="Input alt text">
+</textarea>
+  
+<button id="image-button">Add Button?</button>
+
+</div>
+
+
+
+<div id="poll-opt">
+
+<textarea type="text" id="input-poll-1" class="long-input required" placeholder="Input Poll Option">
+</textarea>
+<textarea type="text" id="input-poll-2" class="long-input required" placeholder="Input Poll Option">
+</textarea>
+<textarea type="text" id="input-poll-3" class="long-input" placeholder="Input Poll Option">
+</textarea>
+<textarea type="text" id="input-poll-4" class="long-input" placeholder="Input Poll Option">
+</textarea>
+<textarea type="text" id="input-poll-5" class="long-input" placeholder="Input Poll Option">
+</textarea>
+<textarea type="text" id="input-poll-6" class="long-input" placeholder="Input Poll Option">
+</textarea>
+<textarea type="text" id="input-poll-7" class="long-input" placeholder="Input Poll Option">
+</textarea>
+<textarea type="text" id="input-poll-8" class="long-input" placeholder="Input Poll Option">
+</textarea>
+<textarea type="text" id="input-poll-9" class="long-input" placeholder="Input Poll Option">
+</textarea>
+<textarea type="text" id="input-poll-10" class="long-input" placeholder="Input Poll Option">
+</textarea>
+<br><br>
+<input type="number" id="input-poll-votes" placeholder="# of votes">
+
+<p><button id="poll-button">Add Poll?</button></p>
+
+</div>
+
+<div id="ask-div">
+
+  <textarea type="url" class="long-input snuggledown" id="icon" placeholder="Input asker's icon URL"></textarea>
+
+  <select id="iconchoose" class="nice-dropdown snuggleup" onchange="pasteIconURL(document.getElementById('icon'),$('#iconchoose').val())">
+    <option>or choose icon here</option>
+  
+    <option>Steve Minecraft</option>
+    <option>Alex Minecraft</option>
+    <option>Herobrine Minecraft</option>
+  
+    <option>Walter White Breaking Bad</option>
+    <option>Hatsune Miku Vocaloid</option>
+    <option>X3 face</option>
+  
+    <option>Sunflowers Van Gogh</option>
+    <option>Mona Lisa</option>
+    <option>Einstein with Tongue</option>
+  
+    <option>Hong Kong Night</option>
+    <option>Railroad</option>
+    <option>Shark Sandcastle</option>
+    <option>Highway Drive</option>
+  
+  </select>
+<br><br>
+
+
+<textarea type="text" id="input-ask-username" class="required" placeholder="Input asker's username">
+</textarea>
+
+<textarea type="text" id="input-ask-text" class="large-input required" placeholder="Input text of ask">
+</textarea>
+
+<button id="poll-button">Add Ask?</button>
+
+</div>
+
+
+
+<button id="add">Add New Post</button>
+<Br><Br>
+<textarea type="text" id="input-tags" class="largeish-input" placeholder="Input tags">
+</textarea>
+
+<textarea type="number" id="input-notes" placeholder="Input # of notes">
+</textarea>
+
+
+
+
+
+<div id="toggle-div">
+<label class="switch">
+  <input type="checkbox" onclick="disableWorkskin()">
+  <span class="slider"></span>
+</label>
+<span id="disable-workskin-label">Workskin Enabled</span>
+</div>
+
+</div>
+
+<br>
+
+<div id="output-div">
+</div>
+
+
+
+<h1>
+  Recreating Tumblr Posts in Ao3
+  </h1>
+  
+  
+  
+  
+  <br><h2> Simple post: </h2>
+  
+  <div class="tblr tblr-light">
+  <hr>
+  <p class="screenreader">-- Tumblr Post: --</p>
+  <div class="header">
+  <div><p><img hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg"></p></div>
+  <div class="name-time-div">
+  <p><span class="screenreader">Username: </span><b>HelloWorld</b></p>
+  <p><small><span class="screenreader">Posted </span>1m ago</small></p>
+  </div>
+  
+  </div>
+  
+  <div class="body">
+  <p>
+      <textarea>input text</textarea>
+  </p>
+  <p><span class="screenreader">Tagged:</span>
+  <span class="tags"><kbd><b>#hellos rambles</b></kbd></span></p>
+  </div>
+  <div class="notes-div"><p class="notes"><span class="screenreader">[ </span>0 notes<span class="screenreader"> ]</span></p></div>
+  <hr>
+  </div>
+  <br>
+  
+  <h2>Different Colours</h2>
+  
+  
+  <div class="tblr">
+  <hr>
+  <p class="screenreader">-- Tumblr Post: --</p>
+  <div class="header">
+  <div><p><img hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg"></p></div>
+  <div class="name-time-div">
+  <p><span class="screenreader">Username: </span><b>HelloWorld</b></p>
+  <p><small><span class="screenreader">Posted </span>1m ago</small></p>
+  </div>
+  
+  </div>
+  
+  <div class="body">
+  <p>
+      This is the Ao3 Default style
+  </p>
+  <p><span class="screenreader">Tagged:</span>
+      <span class="tags"><kbd><b>#hellos rambles</b></kbd></span></p>
+  </div>
+  <div class="notes-div"><p class="notes"><span class="screenreader">[ </span>54 notes<span class="screenreader"> ]</span></p></div>
+  <hr>
+  </div>
+  <br>
+  
+  
+  <div class="tblr tblr-dark">
+  <hr>
+  <p class="screenreader">-- Tumblr Post: --</p>
+  <div class="header">
+  <div><p><img hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg"></p></div>
+  <div class="name-time-div">
+  <p><span class="screenreader">Username: </span><b>HelloWorld</b></p>
+  <p><small><span class="screenreader">Posted </span>1m ago</small></p>
+  </div>
+  
+  </div>
+  
+  <div class="body">
+  <p>
+      And this is the dark mode, its good for the eyes
+  </p>
+  <p><span class="screenreader">Tagged:</span>
+      <span class="tags"><kbd><b>#hellos rambles</b></kbd></span></p>
+  </div>
+  <div class="notes-div"><p class="notes"><span class="screenreader">[ </span>2 notes<span class="screenreader"> ]</span></p></div>
+  <hr>
+  </div>
+  <br>
+  
+  
+  <div class="tblr tblr-minimal">
+  <hr>
+  <p class="screenreader">-- Tumblr Post: --</p>
+  <div class="header">
+  <div><p><img hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg"></p></div>
+  <div class="name-time-div">
+  <p><span class="screenreader">Username: </span><b>HelloWorld</b></p>
+  <p><small><span class="screenreader">Posted </span>1m ago</small></p>
+  </div>
+  
+  </div>
+  
+  <div class="body">
+  <p>
+      Lastly, the minimal style!
+  </p>
+  <p><span class="screenreader">Tagged:</span>
+      <span class="tags"><kbd><b>#hellos rambles</b></kbd></span></p>
+  </div>
+  <div class="notes-div"><p class="notes"><span class="screenreader">[ </span>0 notes<span class="screenreader"> ]</span></p></div>
+  <hr>
+  </div>
+  <br>
+  
+  <br><h2>Multiple reblogs: </h2>
+  <div class="tblr tblr-light">
+  
+  <p class="screenreader">-- Tumblr Post: --</p>
+  <hr>
+      <div class="header">
+          <div><p><img hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg" width="50" height="50"></p></div>
+          <div class="name-time-div">
+              <p><b>HelloWorld </b> <small> reblogged HelloWorld</small></p>
+              <p><small><span class="screenreader"> From </span>1m ago</small></p>
+          </div>
+          </div>
+  <hr class="separate">
+  <div class="header">
+      <div><p><img  hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg" width="50" height="50"></p></div>
+      <div class="name-time-div">
+      <p><span class="screenreader">Tumblr user: </span><b>HelloWorld</b></p>
+      <p><small><span class="screenreader">Posted </span>1m ago</small></p>
+      </div>
+      
+  </div>
+  
+  <div class="body">
+      <p>I love making my own posts</p>
+  </div>
+  
+  <hr class="separate">
+  
+  <div class="header">
+      <div><p><img  hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg" width="50" height="50"></p></div>
+      <div class="name-time-div">
+      <p><span class="screenreader">Tumblr user: </span><b>HelloWorld</b></p>
+      <p><small><span class="screenreader">Reblogged </span>1m ago</small></p>
+      </div>
+      
+  </div>
+  
+  <div class="body">
+      <p>And also reblogging them!</p>
+  
+      <p><span class="screenreader">Tagged:</span>
+      <span class="tags"><kbd><b>#hellos rambles #and then reblogging them again with tags  </b></kbd></span></p>
+  </div>
+  <div class="notes-div"><p class="notes"><span class="screenreader">[ </span>0 notes<span class="screenreader"> ]</span></p></div>
+  <hr>
+  </div>
+  <br>
+  
+  
+  <br><h2> Post with a poll: </h2>
+  <div class="tblr tblr-light">
+      <hr>
+      <p class="screenreader">-- Tumblr Post: --</p>
+      <div class="header">
+      <div><p><img hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg"></p></div>
+      <div class="name-time-div">
+      <p><span class="screenreader">Username: </span><b>HelloWorld</b></p>
+      <p><small><span class="screenreader">Posted </span>1m ago</small></p>
+      </div>
+      
+      </div>
+  
+      <div class="body">
+  
+          <p>Wow look a poll</p>
+          <div class="poll">
+          <p class="screenreader">-- Poll: --</span>
+      <ul>
+      <li><span class="screenreader">Option: </span>An Option</li>
+      <li><span class="screenreader">Option: </span>An Option</li>
+      <li><span class="screenreader">Option: </span>An Option</li>
+      <li><span class="screenreader">Option: </span>An Option</li>
+      </ul>
+      <p><small>2389 votes · Remaining time: 6 days 19 hours</small></p>
+          </div>
+  
+          <p><span class="screenreader">Tagged:</span>
+          <span class="tags"><kbd><b>#hellos rambles #poll</b></kbd></span></p>
+      </div>
+      <div class="notes-div"><p class="notes"><span class="screenreader">[ </span>7654 notes<span class="screenreader"> ]</span></p></div>
+  
+  <hr>
+  </div>
+  <br>
+  
+  
+  <br><h2> Post with an answered poll: </h2>
+  <div class="tblr tblr-light">
+      <hr>
+      <p class="screenreader">-- Tumblr Post: --</p>
+      <div class="header">
+      <div><p><img hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg"></p></div>
+      <div class="name-time-div">
+      <p><span class="screenreader">Username: </span><b>HelloWorld</b></p>
+      <p><small><span class="screenreader">Posted </span>1m ago</small></p>
+      </div>
+      
+      </div>
+  
+      <div class="body">
+  
+          <p>Wow look a poll, except I've voted in it</p>
+          <div class="poll answered">
+          <p class="screenreader">-- Poll: --</span>
+      <ul>
+      <li class="percent-1"><span class="screenreader">50% voted for option: </span>An Option<img hidden class="hidden" alt="" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg">
+          <span class="screenreader">- you voted for this option</span> </li>
+      <li class="percent-2"><span class="screenreader">20% voted for option: </span>An Option</li>
+      <li class="percent-3"><span class="screenreader">30% voted for option: </span>An Option</li>
+      <li><span class="screenreader">0% voted for option: </span>An Option</li>
+      </ul>
+      <p><small>2389 votes · Remaining time: 2 hours</small></p>
+          </div>
+  
+          <p><span class="screenreader">Tagged:</span>
+              <span class="tags"><kbd><b>#hellos rambles #poll</b></kbd></span></p>
+      </div>
+      <div class="notes-div"><p class="notes"><span class="screenreader">[ </span>7654 notes<span class="screenreader"> ]</span></p></div>
+  
+  <hr>
+  </div>
+  <br>
+  
+  
+  
+  <br><h2> Post with ask: </h2>
+  <div class="tblr tblr-light">
+      <hr>
+      <p class="screenreader">-- Tumblr Post: --</p>
+      <div class="header">
+      <div><p><img hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg"></p></div>
+      <div class="name-time-div">
+      <p><span class="screenreader">Username: </span><b>HelloWorld</b></p>
+      <p><small><span class="screenreader">Posted </span>1m ago</small></p>
+      </div>
+      
+      </div>
+  
+      <div class="body">
+  <blockquote>
+      <div class="ask">
+      <div>
+          
+          <div class="text"> 
+  
+          <p class="asker"><b>Anonymous</b> asked: </p>
+              
+          this is an ask from some anon
+      </div>
+          <div class="img"><img hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg" width="50" height="50"></div>
+      </div>
+  </div>
+  </blockquote>
+  
+      <p class="screenreader"><b>HelloWorld</b> answered:</p><p> And this is the answer</p>
+  
+      <p><span class="screenreader">Tagged:</span>
+          <span class="tags"><kbd><b>#hellos rambles #hellos anons</b></kbd></span></p>
+      </div>
+      <div class="notes-div"><p class="notes"><span class="screenreader">[ </span>764 notes<span class="screenreader"> ]</span></p></div>
+  
+  <hr>
+  </div>
+  <br>
+  
+  <br><h2> Post with image: </h2>
+  
+  <div class="tblr tblr-light">
+      <hr>
+      <p class="screenreader">-- Tumblr Post: --</p>
+      <div class="header">
+      <div><p><img hidden class="hidden" alt=""  width="50" height="50" src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg"></p></div>
+      <div class="name-time-div">
+      <p><span class="screenreader">Username: </span><b>HelloWorld</b></p>
+      <p><small><span class="screenreader">Posted </span>1m ago</small></p>
+      </div>
+      
+      </div>
+      
+      <div class="body">
+          <p>an image within a tumblr post</p>
+          <div class="img"><img width="450px" src="https://images.squidge.org/images/2023/08/23/BG2.jpeg" alt="A minecraft screenshot">
+  
+          </div>
+  
+          <p><span class="screenreader">Tagged:</span>
+              <span class="tags"><kbd><b>#hellos rambles #minecraft</b></kbd></span></p>
+      </div>
+      <div class="notes-div"><p class="notes"><span class="screenreader">[ </span>0 notes<span class="screenreader"> ]</span></p></div>
+      <hr>
+      </div>
+      <br>
+  <br>
+  
+<br>
+<div class="easy-to-read">
+
+<div class="html-box copy-box">
+<button id="copy-html-button"  >Copy HTML</button>
+<textarea class="large-input autoresizing" type="text" id = "html-output">
+Your HTML will appear here
+</textarea>
+</div>
+<br>
+
+<div class="css-box copy-box">
+<button id="copy-css-button" class="autoresizing" >Copy CSS</button>
+<!--I've added some JS so this textarea grabs the text from mcpoem.txt-->
+<textarea class="large-input" type="text" id = "css-to-copy"></textarea>
+
+</div>
+</div>
+<br>
+
+<script src="JS/gen.js"></script>
+<script src="JS/tblr.js"></script> 
+</body>
+</html>

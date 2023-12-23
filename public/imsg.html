@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW iMessage Generator</title>
+    <link rel="stylesheet" href="CSS/imsg.css" id="ao3-workskin">
+    <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
+    <link rel="stylesheet" href="CSS/input.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+  </head>
+    <body>
+<button class="nav" onclick="window.location.href = '../index.html';">back</button>
+
+<div class="note">
+  <br><br><br>
+  <p>NOTES:</p>
+  <li>
+    This workskin exists on AO3 <a href="https://archiveofourown.org/works/22703617/chapters/54261724">here</a>!
+    To get the full functionality go to the Ao3 Work. I haven't included a
+     few things in here, like emojis, green messages,
+    and rich links, (which are insanely cool).
+</li>
+<li>
+  I've made slight changes to fit with my general style for when the workskin is disabled.
+</li>
+<li>
+  Required input / text will be marked with a thicker red left border.
+</li>
+  
+  <li>Refresh the page to start over.</li>
+</div>
+<br>
+
+<!--
+<dl class="imessage grouptext ">
+  <h1 class="contact">roomies!!</h1>
+  <h4 class="time"><b>Yesterday</b>
+  </h4></div><div class="in">
+    <dt>Medusa</dt><dd>has anyone seen my shampoo</dd>
+    <dd>looks like this</dd><dd class="pic">
+      <img src="CSS/img/shampoo.png" alt="shampoo bottle for medusa">
+    </dd>
+  </div>
+  <div class="in">
+    <dt>Perseus</dt>
+    <dd>no, sorry</dd>
+    <dd>why?</dd>
+    <h4 class="time"><b>Today</b></h4>
+  </div>
+  <div class="in">
+    <dt>Medusa</dt>
+    <dd>its made specifically for my</dd>
+    <dd>yknow</dd>
+    <dd>I don't know whatll happen if someone else uses it</dd>
+    <div class="footer"><span class="typebar">I used it yesterday because I couldn't find mine</span></div></div></dl>
+
+-->
+<div class="easy-to-read easy-to-read-start">
+
+<select id="group-dm-type" class="nice-dropdown big-text" onchange="switchGroupChatDm()">
+  <option>DM</option>
+  <option>Groupchat</option>
+</select>
+
+<p></p>
+  <div>
+  <input type="checkbox" id="header-choose"  name="contact"/>
+  <label for="header-choose" id="header-choose-label">Add contact's name for header?</label><br>
+  <input type="checkbox" id="textbar-choose" name="contact"/>
+  <label for="textbar">Add textbar?</label>
+  </div>
+</fieldset>
+
+<div id="header-div">
+  <br>
+  <textarea type="text" id="input-header" oninput="addNameForDm()" class="required" placeholder="Insert contact's name"></textarea>
+</div>
+
+<div id="textbar-div">
+  <br>
+  <textarea type="text" id="input-textbar" placeholder="[OPTIONAL] textbar text"></textarea>
+  <br>
+</div>
+
+<p></p>
+<select id="message-type" class="nice-dropdown big-text" onchange="chooseMessageType()">
+  <option val="message">Message</option>
+  <option val="timestamp">Timestamp</option>
+  <option val="image">Image</option>
+  <option val="link">Link</option>
+  <option val="typing-dots" id="typing-dots">Typing Dots</option>
+</select>
+
+<div id="messenger-choose-div">
+  <Br>
+  <fieldset onchange="chooseMessenger()" id="messenger-choose">
+    <legend>Whose texting?:</legend>
+    <input type="radio" id="you" checked name="messenger"/> <label for="you">You</label>
+    <input type="radio" id="contact-choose" name="messenger"/> <label for="contact-choose" id="contact-choose-label">Your contact</label>
+  </fieldset>
+
+  <div id="contact-div">
+    <textarea type="text" id="input-contact" placeholder="Insert name for alt text"></textarea>
+  </div>
+
+</div>
+
+
+
+<div id="input-text-div">
+<textarea type="text" id="input-text" class="large-input required" placeholder="Insert text of message">
+</textarea>
+</div>
+
+<div id="link-text-div">
+  <textarea type="url" id="input-link-text" class="long-input required" placeholder="Insert URL needed"></textarea>
+</div>
+
+<div id="secondary-text-div">
+  <textarea type="text" id="input-secondary-text" class="largeish-input" placeholder="Insert text"></textarea>
+</div>
+
+
+<div id="timestamp-div">
+  <br>
+  <select id="timestamp-choose" class="nice-dropdown">
+    <option>Now</option>
+    <option>An Hour Ago</option>
+    <option>Today</option>
+    <option>Yesterday</option>
+    <option>Last Week</option>
+    <option>Last Month</option>
+    <option>Last Year</option>
+    <option id="custom-time-choose">[Custom Time]</option>
+    <option id="custom-choose">[Custom Text]</option>
+  </select>
+  
+  <span id="time-timestamp-div"><input type="time" id="time-timestamp"></span>
+  <span id="custom-timestamp-div"><input type="text" id="custom-timestamp" placeholder="Insert custom text"></span>
+<br><br>
+</div>
+
+<div id="read-receipt-choose-div-div">
+<div id="read-receipt-choose-div">
+    <input type="checkbox" id="read-receipt-choose" name="contact"/><label for="read-receipt-choose">Add read receipt?</label>
+    <br>
+
+
+<div id="read-receipt-div" class="inline"> 
+  <p>Read</p> 
+  <select id="time-read-choose" class="nice-dropdown">
+    
+    <option>now</option>
+    <option>an hour ago</option>
+    <option>today</option>
+    <option>yesterday</option>
+    <option>last week</option>
+    <option>last month</option>
+    <option>last year</option>
+    <option>[Just Read Receipt]</option>
+    <option>Add Time</option>
+    <option>Add Custom Text</option>
+  </select>
+
+  <span id="time-read-div"><input type="time" id="time-read"></span>
+  <span id="custom-read-receipt-div"><input type="text" id="custom-read" placeholder="Insert custom text"></span>
+  <br />
+</div>
+</div>
+</div>
+
+
+
+
+
+<button id="add">Add</button>
+
+<div id="toggle-div">
+  <label class="switch">
+  <input type="checkbox" onclick="disableWorkskin()" id="disable-workskin">
+  <span class="slider"></span>
+  </label>
+  <label for="disable-workskin"><span id="disable-workskin-label">Workskin Enabled</span></label>
+</div>
+
+
+</div>
+
+<div id="output-div">
+
+  <dl class="imessage grouptext">
+    <h1 class="contact"><span class="screenreader">Groupchat:</span> Example GC</h1>
+  <hr>
+    <h4 class="time" align="center"><b>Now</b></h4>
+
+  <div class="out">
+    <dt><b>You</b></dt>
+    <dd>Guys help</dd>
+    <dd>how tf do I use this workskin</dd>
+  </div>
+  <div class="in">
+    <dt><b>Medusa</b></dt>
+    <dd>Try adding names when theres a new speaker, 
+    even when its just a DM so it can be in alt text / 
+    when the workskin is disabled</dd>
+  </div>
+  <div class="in">
+    <dt><b>Perseus</b></dt>
+    <dd>also you can add images</dd>
+    <dd class="pic"><img src="https://images.squidge.org/images/2023/12/07/hatsunemiku.png" alt="hatsune miku smiling and posing" width="400"></dd>
+    <dd><a href="https://www.amazon.co.uk/hatsune-miku-body-pillow/s?k=hatsune+miku+body+pillow">and links</a>
+    </dd>
+  </div>
+  
+  <div class="out">
+    <dt><b>You</b></dt>
+    <dd>body pillows...?</dd>
+    <dt class="read"><small><span class="screenreader">[</span>Read now<span class="screenreader">]</small></span></dt>
+  </div>
+  <div class="in">
+    <dt><b>Perseus</b></dt>
+    <dd>she's the light of my life</dd>
+    <dd class="typing"><span class="screenreader">[ typing... ]</span>
+      <div></div> <div></div> <div></div> </dd>
+      <dd class="typing"><span class="screenreader">[ typing... ]</span>
+        <div></div> <div></div> <div></div> </dd>
+    </div>
+<div class="out">
+<dt><b>You</b></dt>
+
+<dd class="typing"><span class="screenreader">[ typing... ]</span>
+<div></div> <div></div> <div></div> </dd>
+
+<dd class="typing"><span class="screenreader">[ typing... ]</span>
+  <div></div> <div></div> <div></div> </dd>
+
+  <dd class="typing"><span class="screenreader">[ typing... ]</span>
+    <div></div> <div></div> <div></div> </dd>
+  
+  </div>
+      <br>
+      <div class="footer"><span class="typebar"><span class="screenreader">You are typing: </span> ummm</span>
+      </div>
+      <hr>
+  </dl>
+
+</div>
+
+<br>
+
+<div class="easy-to-read">
+<br>
+<div class="html-box copy-box">
+<button id="copy-html-button"  >Copy HTML</button>
+<textarea class="large-input autoresizing" type="text" id = "html-output">
+Your HTML will appear here
+</textarea>
+</div>
+<br>
+
+<div class="css-box copy-box">
+  
+<button id="copy-css-button" class="autoresizing" >Copy CSS</button>
+<!--I've added some JS so this textarea grabs the text from mcpoem.txt-->
+<textarea class="large-input" type="text" id = "css-to-copy">
+</textarea>
+</div>
+
+</div>
+
+
+<script src="JS/gen.js"></script> 
+<script src="./JS/imsg.js"></script> 
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW Poem Generator</title>
+    <link rel="stylesheet" href="CSS/mcchat.css" id="ao3-workskin">
+    <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
+    <link rel="stylesheet" href="CSS/input.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+  </head>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
+    <body>
+<button class="nav" onclick="window.location.href = '../index.html';">back</button>
+
+<div class="note">
+  <br><br><br>
+  <p>NOTES:</p>
+<li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/100044933">here</a>! I am the creator.</li>
+<li>Currently you can't add you're own backgrounds unless you want to do it manually. Go to the Ao3 page and follow the instructions to find out how. 
+</li>
+<li>Use the Disable Workskin button to see how your HTML looks without its workskin</li>
+<li>Refresh the page to start over</li>
+</div>
+
+<div class="easy-to-read easy-to-read-start">
+  <p></p>
+
+  <b>Add Background:</b>
+<form>
+<select id="bg-choose" class="nice-dropdown">
+
+  <option value="nobg">[No Background]</option>
+  <option value="sun">Plain sky with the sun</option>
+  <option value="clouds">Plain sky with clouds</option>
+  <option value="mumbo-base">Fancy build (MumboJumbo)</option>
+  <option value="buildings">Urban build</option>
+  <option value="lmanhole">L'manhole at night (DreamSMP)</option>
+  <option value="evo-end">The End Portal with the EvoSMP Symbol</option>
+  <option value="evo-platform">A platform with the EvoSMP symbol</option>
+  <option value="redstone">Redstone contraptions</option>
+  <option value="glass-walls">Sunset with glass walls</option>
+  <option value="ocean">Ocean</option>
+  <option value="nether-portal">Nether portal in cave</option>
+  <option value="village-in-forest">Village in forest</option>
+  <option value="storage">Storage system near trees</option>
+  <option value="in-ocean">Under the ocean</option>
+
+</select>
+</form>
+
+<p></p>
+
+<b>Input Text:</b>
+<textarea type="text" id="input-text" class="large-input big-text" placeholder="write text here">
+</textarea>
+
+<h3>Pick Type of Text:</h3>
+
+<form id="choose-type">
+<fieldset>
+
+  <input type="radio" id="white" name="color" value="" checked/><label for="white"> Default [White]</label><br>
+  <input type="radio" id="green" name="color" value="joinleft" /><label for="green"> Joined/Left Text [Yellow]</label><br>
+  <input type="radio" id="cyan" name="color" value="whisper" /><label for="cyan"> Whispers [Grey Italics]</label>
+
+  </fieldset>
+</form>
+
+<fieldset>
+<input type="checkbox" id="show-colored-text">
+<label for="show-colored-text">Add coloured text within chat message?</label>
+</fieldset>
+
+<div id="colored-text-opt">
+  <form>
+    <select id="colored-text-choose" class="nice-dropdown">
+    
+      <option>red</option>
+      <option>orange</option>
+      <option>yellow</option>
+      <option>green</option>
+      <option>blue</option>
+      <option>purple</option>
+      <option>pink</option>
+      <option>grey</option>
+  
+    </select>
+    </form>
+<p></p>
+<div class="inline add">
+<p class="nowrap"><small>&lt;span class = "<span id="display-colored-text">red</span>"&gt;</small></p>
+<p><textarea id="input-colored-text" placeholder="input text"></textarea></p>
+<p><small>&lt;/span&gt;</small></p>
+<p><button id="add-colored-text">Add</button></p>
+</div>
+  
+</div>
+<fieldset>
+  <input type="checkbox" id="fade">
+  <label for="fade">Add fade to chat?</label>
+</fieldset>
+
+
+<button id="add">Add</button>
+
+
+<div id="toggle-div">
+  <label class="switch">
+  <input type="checkbox" onclick="disableWorkskin()" id="disable-workskin">
+  <span class="slider"></span>
+  </label>
+  <label for="disable-workskin"><span id="disable-workskin-label">Workskin Enabled</span></label>
+</div>
+
+</div>
+
+<br>
+
+<div id="output-div">
+
+  <div class="mcchat clouds fade">
+    <div class="screenreader" align=center><small>-- Minecraft Chat: --</small></div>
+    <hr>
+    <p><span class="">
+    Server Updating...
+    </span></p>
+    <p><span class="">
+    Server Updating...
+    </span></p>
+    <p><span class="">
+    Server Updating...
+    </span></p>
+    <p><span class="">
+    Server Updated!
+    </span></p>
+  </span></p>
+    <p><span class="joinleft">
+    [HelloWorld joined the game]
+    </span></p>
+    <p><span class="">
+    &lt;HelloWorld&gt; Hi!
+    </span></p><p><span class="">
+    &lt;HelloWorld&gt; Click add to start creating your minecraft chat
+    </span></p><p><span class="">
+    &lt;HelloWorld&gt; there are three types of text- the default, joined/left text, and whispers
+    </span></p><p><span class="whisper">
+    (HelloWorld whispered to you: whispers look like this)
+    </span></p><p><span class="">
+    &lt;HelloWorld&gt; You can also make the first messages start to fade out, and you can add <span class="red">cu</span><span class="orange">st</span><span class="yellow">om </span><span class="green">co</span><span class="blue">lo</span><span class="purple">u</span><span class=pink>rs</span>
+to your message!
+    </span></p><p><span class="">
+    &lt;HelloWorld&gt; just remember that custom colours won't show up with the workskin disabled
+    </span></p><hr></div>
+
+</div>
+<br>
+<div class="easy-to-read">
+
+<div class="html-box copy-box">
+<button id="copy-html-button"  >Copy HTML</button>
+<textarea class="large-input autoresizing" type="text" id = "html-output">
+Your HTML will appear here
+</textarea>
+</div>
+<br>
+
+<div class="css-box copy-box">
+<button id="copy-css-button" class="autoresizing" >Copy CSS</button>
+<!--I've added some JS so this textarea grabs the text from mcpoem.txt-->
+<textarea class="large-input" type="text" id = "css-to-copy"></textarea>
+
+</div>
+</div>
+<br>
+
+<script src="./JS/gen.js"></script>
+<script src="./JS/mcchat.js"></script>
+</body>
+</html>

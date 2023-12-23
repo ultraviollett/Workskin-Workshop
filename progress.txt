@@ -1,0 +1,74 @@
+completed:
+x-add general css to make site nice-looking [PRETTIFY]
+x-add page for copying workskin CSS
+x-add instruction manual
+x-add links to ao3 works about the workskin
+x-add jquery to simplemsg and mcpoem 
+x-change ALL variables to follow best practice
+x-add more comments explaining code 
+x-add defaults to all checkboxes/radio
+x-add form for suggestions and asking for help
+x-add messaging
+x-add demonstration to definitions
+x-add 'copy text' button to HTML/CSS
+x-switch CSS to under all workskins
+x-move css copy paste to text files then display them with js
+X-CHEKC EVERY SKIN WORKS
+x-add disable workskin toggle to each one
+x-fix imsg
+x-remove <pre> from mcbook -> plus a lot of others 
+x-add mc messaging
+
+
+
+
+
+--current goals--
+
+general:
+-REPLACE TWITTER 
+-add tumblr
+-add error message telling ppl to go to Ao3 work when .txt file isnt pulled
+-add note about toggling workskin to each workskin
+-finish tutorial page, CHECK WITH PEOPLE IT MAKES SENSE
+-ensure all fields that need to go blank after hitting add do so
+-find a way to read it with a common screenreader?
+-check everything before you 'publish' it
+-change style
+
+add HTML generators:
+-add tumblr
+    -add poll results options
+x-add twitter
+    -add up to four images allowed
+    -add poll time left
+    -add poll results options
+-improve mcpoem 
+    -add colour picker
+-add twitchchat [TWCH]
+-add youtube thumbnails
+-add reddit 
+-add 4chan
+-add discord https://archiveofourown.org/works/26534413/chapters/74599071#workskin 
+
+
+
+--far off goals--
+-add tip jar
+-stylize everything better
+
+
+workskin tips (to be compiled later, probably in an ao3 work):
+-use vscode, download microsoft
+-can use flex defaults
+-DONT USE FLOAT
+-cant use grid, can use tables
+-ao3 has default margins and line breaks
+-use vw and max-width to achieve a nice looking workskin on all devices
+-IF U HAVE A WHITE BACKGROUND PLEASE SET FONT COLOUR / AND OPPOSITE
+-ao3 WILL add paragraphs to things you dont want it to
+-USE SQUIDGE TO HOST IMAGES
+
+
+Known bugs:
+imsg- if you add two typing dots in a row for 'you', the first bubble of the tail will disappear for all typing dots besides the last one

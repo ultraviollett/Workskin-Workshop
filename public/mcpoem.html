@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW Poem Generator</title>
+    <link rel="stylesheet" href="CSS/mcpoem.css" id="ao3-workskin">
+    <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
+    <link rel="stylesheet" href="CSS/input.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+  </head>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
+    <body>
+<button class="nav" onclick="window.location.href = '../index.html';">back</button>
+
+<div class="note">
+  <br><br><br>
+  <p>NOTES:</p>
+<li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/98981022#workskin">here</a>! I am the creator</li>
+<li>I am planning to make it so you can pick any colour with a colour picker to add to the text,
+  if you want to do so currently, there are instructions on the AO3 page linked above
+</li>
+<li>Use the Disable Workskin button to see how your HTML looks without its workskin</li>
+<li>Refresh the page to start over</li>
+</div>
+
+<div class="easy-to-read easy-to-read-start">
+
+<p></p>
+<textarea type="text" id="input-text" class="large-input big-text" placeholder="Input Text Here">
+</textarea>
+
+<h3>Pick Colour:</h3>
+
+<form id="choose-color-form">
+<fieldset  onchange="reveal-color-pick-div()">
+  <div class="columnify">
+  <div>
+  <p class="important"><input type="radio" id="white" name="color" value="white" checked/><label for="white"> White</label>
+  <p class="important"><input type="radio" id="green" name="color" value="green" /><label for="green"> Green</label> </p>
+  <p class="important"><input type="radio" id="cyan" name="color" value="cyan" /><label for="cyan"> Cyan</label> </p>
+  <p><input type="radio" id="red" name="color" value="red" /><label for="red"> Red</label> </p>
+</div><div>
+  <p><input type="radio" id="orange" name="color" value="orange" /><label for="orange"> Orange</label> </p>
+  <p><input type="radio" id="yellow" name="color" value="yellow" /><label for="yellow"> Yellow</label> </p>
+  <p><input type="radio" id="purple" name="color" value="purple" /><label for="purple"> Purple</label> </p>
+  <p><input type="radio" id="pink" name="color" value="pink" /><label for="pink"> Pink</label> </p>
+</div>
+</div>
+  <!--
+    <div><input type="radio" id="colorpick" name="color" value="colorpick" /><label for="colorpick">Custom Colour</label> </div>
+  
+  When colorpick is checked, the color input appears. Unfortunately haven't
+  figured out how to use it yet so its commented out
+  -->
+  </fieldset>
+</form>
+
+<div id="color-pick-div">
+  <input type="color">
+</div>
+
+<button id="add">Add</button>
+
+
+<div id="toggle-div">
+  <label class="switch">
+  <input type="checkbox" onclick="disableWorkskin()" id="disable-workskin">
+  <span class="slider"></span>
+  </label>
+  <label for="disable-workskin"><span id="disable-workskin-label">Workskin Enabled</span></label>
+</div>
+
+</div>
+
+<br>
+
+<div id="output-div">
+
+<div class="mcpoemdiv">
+<p class="screenreader" align="center"><small> -- Minecraft End Poem: -- </small></p>
+<hr>
+<p class="green">
+<span class="screenreader">green text:</span>
+Once upon a time there was an example text to showcase
+an end poem generator</p><p class="cyan">
+<span class="screenreader">cyan text: </span> That text is this one, player
+</p>
+<p class="">
+<span class="screenreader">white text: </span>
+click "add" to start creating your own end poem. each time you click "add", a new paragraph will be added. It may be easier to edit the text inside the HTML if you make a mistake like a spelling error
+</p>
+<p class="pink">
+<span class="screenreader">pink text: </span>
+There are fun colors as well!
+</p>
+<hr>
+</div>
+</div>
+
+
+<br>
+<div class="easy-to-read">
+
+<div class="html-box copy-box">
+<button id="copy-html-button"  >Copy HTML</button>
+<textarea class="large-input autoresizing" type="text" id = "html-output">
+Your HTML will appear here
+</textarea>
+</div>
+<br>
+
+<div class="css-box copy-box">
+<button id="copy-css-button" class="autoresizing" >Copy CSS</button>
+<!--I've added some JS so this textarea grabs the text from mcpoem.txt-->
+<textarea class="large-input" type="text" id = "css-to-copy"></textarea>
+
+</div>
+</div>
+<br>
+<script src="JS/gen.js"></script>
+<script src="./JS/mcpoem.js"></script> 
+</body>
+</html>
