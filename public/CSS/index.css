@@ -51,7 +51,7 @@ body {
 }
 
 .button-big-default {
-  border: 4px dotted rgba(28, 37, 66, 0.625);
+  border: 3px dotted #105b63ab;
   width: 100%;
   padding: 3px;
   text-align: center;
@@ -70,11 +70,11 @@ body {
 }
 
 .button-big-default:hover {
-  background-color: rgba(249, 249, 104, 0.516);
+  background-color: #ffc78c;
 }
 
 .dark .button-big-default:hover {
-  background-color: #dd900be5;
+  background-color: #105b63;
 }
 
 a{
@@ -85,4 +85,9 @@ a:hover{
   background-color: #ffd34e88;
   padding: 2px;
   border-radius: 2px
+}
+
+
+li{
+  margin-bottom: 10px;
 }

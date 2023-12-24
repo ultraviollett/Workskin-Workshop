@@ -2,7 +2,7 @@ module.exports = {
   darkMode: 'class',
   content: [
     './public/index.{html,js}',
-    './public/**/*.{html,js}',
+    './public/*.{html,js}',
   ],
   theme: {
     
@@ -11,6 +11,7 @@ module.exports = {
         'light': '#fffad5',
         'brightlight': '#ffd34e',
         'bluedark': '#105b63',
+        'darkdark': '#092629',
         'bright': '#db9e36',
         'reddark': '#bd4932',
 
