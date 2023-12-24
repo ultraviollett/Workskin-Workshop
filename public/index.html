@@ -17,7 +17,14 @@
 
 <div class="flex flex-col justify-between align-middle w-screen min-h-screen ">
 
-  <header class="mt-4 border-solid border-2 border-bluedark dark:border-brightlight"> </header>
+  <header class="flex justify-between text-bluedark dark:text-bright h-10 border-b-4 border-bluedark dark:border-brightlight">  
+    <button class=" align-middle px-3 font-bold pt-2" onclick="window.location.href = 'index.html';">
+      HOME</button>
+      <div class="flex items-center px-4">
+    <input type="checkbox" id="dark-mode">
+    <label for="dark-mode">Dark Mode</label>
+      </div>
+  </header>
 <div class="flex flex-wrap justify-around bg-black-300 max-w-5xl align-middle m-auto">
 
   <div class="w-full lg:w-1/2 p-3">
@@ -64,6 +71,9 @@
     
     <footer class="mb-4 border-solid border-2 border-bluedark dark:border-brightlight" ></footer>
   </div>
+  <br> -->
+<script src="JS/gen.js"></script>
 <script src="JS/index.js"></script>
+
 </body>
 </html>

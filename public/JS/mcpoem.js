@@ -1,25 +1,15 @@
 $("#controls").hide();
 
+
 var prev = "";//holds code (minus surrounding div) to be added to
 //were adding a default example
 
-/*
-function reveal-color-pick-div(){
-    //not in use as I need to edit the CSS to add custom colours,
-    //ill come back later
-    if( $('input[id="colorpick"]:checked').val() ){
-
-        document.getElementById("color-pick-div").style.display = "";
-    }else{
-        document.getElementById("color-pick-div").style.display = "none";
-    }
-}
-*/
 
 function findColor(){
     //finds colour of text picked in radio buttons
     //Its a separate function because I want to add a colorpicker later
     const x = $("input[type='radio'][name=color]:checked",'#choose-color-form').val();
+
     return x;
 }
 
@@ -32,12 +22,12 @@ function addSurroundingDiv(x){
 
 }
 
-function addNewText(x){
+function addNewText(){
     const color = findColor(); //find color picked
 
-    const text = allReplace( $("#input-text").val() );//get text from input-text box, keeps paragraphs
+    const text = DOMPurify.sanitize($("#input-text").val());;//get text from input-text box, keeps paragraphs
 
-    x = x + `
+    x = `
 <p class="${color}">
 <span class="screenreader"> ${color} text: </span>
 ${text}
@@ -50,15 +40,16 @@ $(function() {
 
     $('#add').on('click', function() {
         //compiles the whole code together as is currently
-        
-        let x = addNewText(prev);
+  
+        let x = addNewText();
 
+        x = prev + x;
         prev = x;
 
         x = addSurroundingDiv(x);
         $('#output-div').html("");
         $('#output-div').html(x);
-        $('#html-output').text(x);
+       // $('#html-output').text(x);
 
         $("#input-text").val("");
 

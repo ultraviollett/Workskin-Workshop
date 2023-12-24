@@ -4,21 +4,6 @@ document.getElementsByTagName('input').checked = "false";
 isDisabled = false; //for workskin
 $("#disabled-workskin").attr("disabled", "disabled"); //starts off disabled
 
-function allReplace(str, obj = 
-{ '<(?!(/?)(span|div|p|hr|b|em|a|small|i|img)( (class|id|img|src|alt|href)=|>))' : '&lt;', 
-"(?<!((<|</)(span|div|p|i|a|small|em))|\"|')>" : '&gt;',
-
-'\r?\n' : '<br>',} ) {
-    /*this replaces things that are inputted that html won't display right. 
-    the default obj replaces <, > and line breaks
-    however if < is part of a span it wont
-    */
-    for (const x in obj) {
-      str = str.replace(new RegExp(x, 'g'), obj[x]);
-    }
-    return str;
-};
-
 function disableWorkskin(){
     if (!isDisabled){
         $("#ao3-workskin").attr("disabled", "disabled");
@@ -116,6 +101,14 @@ $(function() {
     let tocopy = $("#css-to-copy").val();
     navigator.clipboard.writeText(tocopy);
     $("#copy-css-button").text("Copied!");
+});
+
+$('#dark-mode').on('click', function() {
+    if($('input[id="dark-mode"]:checked').val()){
+    $("html").addClass("dark");
+    }else{
+        $("html").removeClass("dark");
+    }
 });
 
 });

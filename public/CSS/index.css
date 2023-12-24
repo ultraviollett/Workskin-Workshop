@@ -94,12 +94,12 @@ li{
 
 
 .almost-full-height{
-  height: calc(100vh - 120px);
+  height: calc(100vh - 90px);
   padding: 16px
 }
 
 @media screen and (max-width: 768px) {
-  .almost-full-height#controls {
+  .almost-full-height#controls, .almost-full-height#output-div {
      height: auto;
   }
 }
