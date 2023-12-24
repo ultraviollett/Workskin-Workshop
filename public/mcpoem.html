@@ -13,7 +13,7 @@
     
   </head>
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
-    <body  class="bg-slate-200 text-darkdark dark:bg-darkdark dark:text-light ">
+    <body  class="bg-slate-200 text-darkdark dark:bg-darkdark overflow-x-hidden  dark:text-light ">
       <div class="flex flex-col justify-between align-middle w-full min-h-screen ">
 
         <header class="text-bluedark dark:text-bright mt-4-solid border-b-4 border-bluedark dark:border-brightlight">  
@@ -24,7 +24,7 @@
       
         <div class="w-full lg:w-1/2 p-3">
       
-
+<div id="notes" class="flex flex-col h-[600px]">
   <p class=" font-bold">NOTES:</p>
 <div class="m-7 mt-2">
 <li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/98981022#workskin">here</a>! I am the creator.</li>
@@ -33,11 +33,17 @@
 </li>
 <li>Use the Disable Workskin button to see how your HTML looks without its workskin.</li>
 <li>Refresh the page to start over.</li>
+</div >
+<div class="mb-0 mt-auto">
+<button id="show-controls" class="button-big-default">Continue to the Generator </button>
+</div>
 </div>
 
-
-<div class="">
-
+<div id="controls" class="">
+  <div class="mb-auto mt-0">
+    <button id="show-notes" class="button-big-default">Back to Notes </button>
+    </div>
+<h2 class="mb-4">End Poem Generator</h2>
   <p></p>
   <textarea type="text" id="input-text" class="text-black p-2 w-full min-h-16" placeholder="Input Text Here">
   </textarea>
@@ -84,7 +90,7 @@
     </label>
     <label for="disable-workskin"><span id="disable-workskin-label">Workskin Enabled</span></label>
   </div>
-  
+
   </div>
   
 </div>

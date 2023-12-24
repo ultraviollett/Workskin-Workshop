@@ -1,4 +1,4 @@
-
+$("#controls").hide();
 
 document.getElementById("color-pick-div").style.display = "none";
 
@@ -66,7 +66,19 @@ $(function() {
 
     });
 
+    $('#show-controls').on('click', function() {
+        //compiles the whole code together as is currently
+        
+        $("#notes").slideUp();
+        $("#controls").slideDown();
+    });
 
+    $('#show-notes').on('click', function() {
+        //compiles the whole code together as is currently
+        
+        $("#notes").slideDown();
+        $("#controls").slideUp();
+    });
 
     fetch("CSS/mcpoem.txt").then(res => res.text()).then(text => {
         const contentDiv = document.getElementById("css-to-copy");

@@ -12,6 +12,6 @@ function showUnfinished(){
     }
 }
 $(function() {
-jQuery(".titlecard").fitText(0.45);
+jQuery(".titlecard").fitText(0.5);
 
 });
