@@ -16,17 +16,17 @@
     <body  class="bg-slate-200 text-darkdark dark:bg-darkdark overflow-x-hidden  dark:text-light ">
       <div class="flex flex-col justify-between align-middle w-full min-h-screen ">
 
-        <header class="text-bluedark dark:text-bright mt-4-solid border-b-4 border-bluedark dark:border-brightlight">  
-          <button class="p-3 font-bold" onclick="window.location.href = 'index.html';">
+        <header class="text-bluedark dark:text-bright h-10 border-b-4 border-bluedark dark:border-brightlight">  
+          <button class=" align-middle px-3 font-bold pt-2" onclick="window.location.href = 'index.html';">
             HOME</button>
         </header>
       <div class="flex flex-wrap justify-evenly w-full align-middle m-auto">
       
         <div class="w-full lg:w-1/2 p-3">
       
-<div id="notes" class="flex flex-col h-[600px]">
+<div id="notes" class="flex flex-col almost-full-height">
   <p class=" font-bold">NOTES:</p>
-<div class="m-7 mt-2">
+<div class="m-7 mt-2 add-scroll">
 <li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/98981022#workskin">here</a>! I am the creator.</li>
 <li>I am planning to make it so you can pick any colour with a colour picker to add to the text,
   if you want to do so currently, there are instructions on the AO3 page linked above.
@@ -39,10 +39,11 @@
 </div>
 </div>
 
-<div id="controls" class="">
+<div id="controls" class="almost-full-height flex flex-col sm:h-auto">
   <div class="mb-auto mt-0">
     <button id="show-notes" class="button-big-default">Back to Notes </button>
     </div>
+<div class=" w-full m-auto add-scroll">
 <h2 class="mb-4">End Poem Generator</h2>
   <p></p>
   <textarea type="text" id="input-text" class="text-black p-2 w-full min-h-16" placeholder="Input Text Here">
@@ -75,10 +76,16 @@
   </div>
     </fieldset>
   </form>
-  
-  <div id="color-pick-div">
-    <input type="color">
-  </div>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti pariatur praesentium voluptatibus et id ipsa nobis necessitatibus, iusto ratione sint saepe, quod voluptates totam numquam esse quasi itaque quidem dicta!</p>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti pariatur praesentium voluptatibus et id ipsa nobis necessitatibus, iusto ratione sint saepe, quod voluptates totam numquam esse quasi itaque quidem dicta!</p>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti pariatur praesentium voluptatibus et id ipsa nobis necessitatibus, iusto ratione sint saepe, quod voluptates totam numquam esse quasi itaque quidem dicta!</p>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti pariatur praesentium voluptatibus et id ipsa nobis necessitatibus, iusto ratione sint saepe, quod voluptates totam numquam esse quasi itaque quidem dicta!</p>
+
+</div>
   <div class="my-5">
   <button id="add" class="w-full button-big-default ">Add</button>
   </div>
@@ -94,10 +101,10 @@
   </div>
   
 </div>
-      <div class="w-full lg:w-1/2 p-3">
+      <div class="w-full lg:w-1/2 p-3 flex flex-col items-center justify-center">
 
 
-        <div id="output-div">
+        <div id="output-div" class="add-scrollt">
 
           <div class="mcpoemdiv">
           <p class="screenreader" align="center"><small> -- Minecraft End Poem: -- </small></p>

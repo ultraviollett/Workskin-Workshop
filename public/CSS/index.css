@@ -91,3 +91,23 @@ a:hover{
 li{
   margin-bottom: 10px;
 }
+
+
+.almost-full-height{
+  height: calc(100vh - 120px);
+  padding: 16px
+}
+
+@media screen and (max-width: 768px) {
+  .almost-full-height#controls {
+     height: auto;
+  }
+}
+
+textarea::placeholder{
+  color: black;
+}
+
+.add-scroll{
+  overflow-y: scroll;
+}

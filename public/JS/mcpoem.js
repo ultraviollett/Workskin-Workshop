@@ -1,7 +1,5 @@
 $("#controls").hide();
 
-document.getElementById("color-pick-div").style.display = "none";
-
 var prev = "";//holds code (minus surrounding div) to be added to
 //were adding a default example
 
