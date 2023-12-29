@@ -27,7 +27,7 @@ h1 {
 }
 
 h1.titlecard{
-  font-size: 4em;
+  font-size: 10vw;
 }
 
 h2 {
@@ -48,6 +48,12 @@ body {
 .italic, i{
   font-family: "p font italics", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 
+}
+
+li {
+  list-style-position: inside;
+  list-style-type: square;
+  padding-bottom: 15px;
 }
 
 textarea{
@@ -119,6 +125,10 @@ li{
   .almost-full-height#notes {
     height: calc(100vh - 64px);
     margin-bottom: 60px;
+ }
+
+ h1.titlecard {
+  font-size: 20vw;
  }
 }
 
