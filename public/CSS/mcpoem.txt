@@ -1,0 +1,51 @@
+.screenreader {
+  position: absolute;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mcpoemdiv{
+  display:block;
+
+  background-image: url('https://images.squidge.org/images/2023/11/21/tumblr_df08e5844615ba879c478f8ab4c3cf88_6f414adc_400.png');
+  background-repeat: repeat;
+  background-size: 6em;
+  box-shadow: inset 0 0 25em rgba(0, 0, 0, 0.57);
+  text-align: center;
+  text-align: justify;
+  padding: 5px;
+  width: vw;
+  
+}
+.mcpoemdiv hr{
+  opacity: 0;
+  display: none;
+}
+
+.mcpoemdiv p{
+  display: block;
+  width: 70%;
+  margin: 3em 15%;
+  max-width: 15cm;
+  text-wrap: wrap;
+  padding: auto 0 ;
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  line-height: 150%;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+.mcpoemdiv .green{color: limegreen;}
+.mcpoemdiv .cyan{color: cyan; }
+
+.mcpoemdiv .red{ color: red;}
+.mcpoemdiv .orange{ color:orange;}
+.mcpoemdiv .yellow{ color: yellow;}
+.mcpoemdiv .purple{ color: rgb(174, 40, 174);}
+.mcpoemdiv .pink{ color: rgb(255, 151, 198);}

@@ -50,6 +50,19 @@ body {
 
 }
 
+textarea{
+  color: black;
+  font-size: small;
+  padding: 4px;
+  width: 90%;
+  margin: 5px;
+  min-height: 3em;
+}
+
+textarea::placeholder{
+  font-size: small;
+}
+
 .button-big-default {
   border: 3px dotted #105b63ab;
   width: 100%;
@@ -94,14 +107,23 @@ li{
 
 
 .almost-full-height{
-  height: calc(100vh - 90px);
-  padding: 16px
+  height: calc(100vh - 64px);
+
+
 }
 
-@media screen and (max-width: 768px) {
-  .almost-full-height#controls, .almost-full-height#output-div {
+@media screen and (max-width: 850px) {
+  .almost-full-height {
      height: auto;
   }
+  .almost-full-height#notes {
+    height: calc(100vh - 64px);
+    margin-bottom: 60px;
+ }
+}
+
+body .div{
+  margin: 0;
 }
 
 textarea::placeholder{
@@ -110,4 +132,97 @@ textarea::placeholder{
 
 .add-scroll{
   overflow-y: scroll;
+}
+
+#show-controls, #show-notes{
+  display: flex;
+  padding: auto 1px;
+  font-size: small;
+  justify-content: center;
+  margin: auto;
+
+
+}
+
+#show-controls::after, #show-notes::after{
+  float: right;
+  display: contents;
+  content: url("./img/BLUEDARKARROWDOWN.svg");
+  margin-left: 10px;
+  background-size: 100%;
+  transform: scale(0.032);
+  width: 0;
+  height: 0;
+}
+
+#show-notes::after{
+  content: url("./img/BLUEDARKARROWUP.svg");
+}
+
+.dark #show-controls::after{
+  content: url("./img/BRIGHTARROWDOWN.svg")
+}
+
+.dark #show-notes::after{
+  content: url("./img/BRIGHTARROWUP.svg")
+}
+
+#copy-grid{
+  display: grid;
+  width: 100%;
+  grid-template-columns: 50% auto 50px;
+  grid-row: 1fr;
+  height: fit-content;
+  padding-top: 5px;
+}
+
+#copy-html-div {
+  grid-area: 1 / 1 ;
+  overflow-y: hide;
+
+}
+
+#copy-css-div{
+  grid-area: 1 / 2;
+  overflow-y: hide;
+  
+}
+
+#show-copy-grid{
+  overflow-y: hide;
+  grid-area: 1 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+
+
+}
+
+#show-copy-grid-button {
+  font-size: 13px;
+  margin: 2px;
+
+}
+
+
+textarea#html-output, textarea#css-to-copy {
+  height: 300px;
+  color: black;
+  font-size: xx-small;
+  width: 100%;
+  overflow-y: scroll;
+  padding: 4px;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none; /*remove the resize handle on the bottom right*/
 }

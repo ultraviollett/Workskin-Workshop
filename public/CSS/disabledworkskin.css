@@ -8,7 +8,14 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 color: black;
 padding: 2em 2vw;
 text-wrap: wrap;
+line-height: 1.5;
 
+
+}
+
+.dark #output-div{
+    background-color: rgb(23, 22, 22);
+    color: white;
 }
 
 #output-div pre{

@@ -1,9 +1,23 @@
-$("#controls").hide();
-
-
 var prev = "";//holds code (minus surrounding div) to be added to
 //were adding a default example
 
+$(document).ready(function(){
+
+    
+    const contentDiv = document.getElementById("css-to-copy");
+    
+      fetch("CSS/mcpoem.txt").then(res => {
+        if (!res.ok) {
+          return "File coudn't be found. Please go to the ao3 page and find the CSS listed there";
+        }
+        return res.text();
+      }).then(text => {
+        contentDiv.textContent = text;
+      });
+    
+    
+    
+    });
 
 function findColor(){
     //finds colour of text picked in radio buttons
@@ -41,7 +55,7 @@ $(function() {
     $('#add').on('click', function() {
         //compiles the whole code together as is currently
   
-        let x = addNewText();
+        let x = $("#input-text").val() ? addNewText(): "";
 
         x = prev + x;
         prev = x;
@@ -49,25 +63,13 @@ $(function() {
         x = addSurroundingDiv(x);
         $('#output-div').html("");
         $('#output-div').html(x);
-       // $('#html-output').text(x);
+        $('#html-output').text(x);
 
         $("#input-text").val("");
 
     });
 
-    $('#show-controls').on('click', function() {
-        //compiles the whole code together as is currently
-        
-        $("#notes").slideUp();
-        $("#controls").slideDown();
-    });
 
-    $('#show-notes').on('click', function() {
-        //compiles the whole code together as is currently
-        
-        $("#notes").slideDown();
-        $("#controls").slideUp();
-    });
 
     fetch("CSS/mcpoem.txt").then(res => res.text()).then(text => {
         const contentDiv = document.getElementById("css-to-copy");

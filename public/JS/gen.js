@@ -1,5 +1,10 @@
- //makes sure all checkboxes are off by default
+
+
+//makes sure all checkboxes are off by default
 document.getElementsByTagName('input').checked = "false";
+$("#controls").hide();
+
+$("#html-css-div").hide();
 
 isDisabled = false; //for workskin
 $("#disabled-workskin").attr("disabled", "disabled"); //starts off disabled
@@ -88,12 +93,15 @@ function pasteIconURL(idToPaste="", iconChoose=""){
         
     }  
 
-
 $(function() {
     $('#copy-html-button').on('click', function() {
-      let tocopy = $("#html-output").val();
-      navigator.clipboard.writeText(tocopy);
-      $("#copy-html-button").text("Copied!");
+        let tocopy = $("#html-output").val();
+        navigator.clipboard.writeText(tocopy);
+        $("#copy-html-button").text("Copied!");
+        
+        window.setTimeout(function () {
+            $("#copy-html-button").text("Copy HTML");
+        }, 2000);
 
   });
   
@@ -101,7 +109,38 @@ $(function() {
     let tocopy = $("#css-to-copy").val();
     navigator.clipboard.writeText(tocopy);
     $("#copy-css-button").text("Copied!");
+    window.setTimeout(function () {
+        $("#copy-css-button").text("Copy CSS");
+    }, 2000);
 });
+
+$('#show-controls').on('click', function() {
+    //compiles the whole code together as is currently
+    
+    $("#notes").slideUp();
+    $("#controls").slideDown();
+});
+
+$('#show-notes').on('click', function() {
+    //compiles the whole code together as is currently
+    
+    $("#notes").slideDown();
+    $("#controls").slideUp();
+});
+
+$('#show-copy-grid-button').on('click', function() {
+    //compiles the whole code together as is currently
+    if ( $("#html-css-div").is(":hidden") ){
+        $("#html-css-div").slideDown();
+        $("#show-copy-grid-button").text("hide?");  
+    }else{
+        $("#html-css-div").slideUp();
+        $("#show-copy-grid-button").text("show?");   
+    }
+
+
+});
+
 
 $('#dark-mode').on('click', function() {
     if($('input[id="dark-mode"]:checked').val()){

@@ -6,31 +6,31 @@
     <title>WW Poem Generator</title>
     <link rel="stylesheet" href="CSS/mcpoem.css" id="ao3-workskin">
     <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
-    <link rel="stylesheet" href="./dist/output.css">
-    <link rel="stylesheet" href="./CSS/index.css">
-    <link rel="stylesheet" href="./CSS/webpage.css">
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="CSS/index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" integrity="sha512-H+rglffZ6f5gF7UJgvH4Naa+fGCgjrHKMgoFOGmcPTRwR6oILo5R+gtzNrpDp7iMV3udbymBVjkeZGNz1Em4rQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
   </head>
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
-    <body  class="bg-slate-200 text-darkdark dark:bg-darkdark overflow-x-hidden  dark:text-light ">
-      <div class="flex flex-col justify-between align-middle w-full min-h-screen ">
+    <body  class=" bg-slate-200 text-darkdark dark:bg-darkdark overflow-x-hidden  dark:text-light ">
+      <div class="flex flex-col justify-between align-middle w-full min-h-screen h-auto z-100">
 
-        <header class="flex justify-between text-bluedark dark:text-bright h-10 border-b-4 border-bluedark dark:border-brightlight">  
+        <header class=" overflow-hidden flex justify-between text-bluedark dark:text-bright h-10 border-b-4 border-bluedark dark:border-brightlight">  
           <button class=" align-middle px-3 font-bold pt-2" onclick="window.location.href = 'index.html';">
             HOME</button>
             <div class="flex items-center px-4">
-          <input type="checkbox" id="dark-mode">
           <label for="dark-mode">Dark Mode</label>
+          <input type="checkbox" id="dark-mode" class=" ml-2">
+          
             </div>
         </header>
-      <div class="flex flex-wrap justify-evenly w-full align-middle m-auto">
+      <div class="flex flex-wrap justify-evenly w-full align-middle ">
       
-        <div class="w-full lg:w-1/2 p-3">
-      
-<div id="notes" class="flex flex-col almost-full-height">
+        <div class="w-full lg:w-2/5">
+    
+<div id="notes" class="flex flex-col almost-full-height p-3">
   <p class=" font-bold">NOTES:</p>
 <div class="m-7 mt-2 add-scroll">
 <li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/98981022#workskin">here</a>! I am the creator.</li>
@@ -41,18 +41,18 @@
 <li>Refresh the page to start over.</li>
 </div >
 <div class="mb-0 mt-auto">
-<button id="show-controls" class="button-big-default">Continue to the Generator </button>
+<button id="show-controls" class="button-big-default">Continue to Generator </button>
 </div>
 </div>
 
-<div id="controls" class="almost-full-height flex flex-col sm:h-auto">
+<div id="controls" class="w-full almost-full-height flex flex-col p-4">
   <div class="mb-auto mt-0">
     <button id="show-notes" class="button-big-default">Back to Notes </button>
     </div>
 <div class=" w-full m-auto add-scroll">
 <h2 class="mb-4">End Poem Generator</h2>
-  <p></p>
-  <textarea type="text" id="input-text" class="text-black p-2 w-full min-h-16" placeholder="Input Text Here">
+
+  <textarea type="text" id="input-text" class="" placeholder="Input Text Here">
   </textarea>
   
   <p class="font-bold text-lg mt-5">Pick Colour:</p>
@@ -100,18 +100,19 @@
   </div>
   
 </div>
-      <div class="w-full lg:w-1/2 p-3 flex flex-col items-center justify-center">
+      <div class=" w-full almost-full-height lg:w-3/5 p-0 flex flex-col">
 
 
-        <div id="output-div" class="add-scroll w-full almost-full-height">
+        <div id="output-div" class="my-auto w-full add-scroll">
 
-          <div class="mcpoemdiv">
+          <div class="mcpoemdiv w-full">
           <p class="screenreader" align="center"><small> -- Minecraft End Poem: -- </small></p>
           <hr>
           <p class="green">
           <span class="screenreader">green text:</span>
           Once upon a time there was an example text to showcase
-          an end poem generator</p><p class="cyan">
+          an end poem generator</p>
+          <p class="cyan">
           <span class="screenreader">cyan text: </span> That text is this one, player
           </p>
           <p class="">
@@ -121,45 +122,48 @@
           <p class="pink">
           <span class="screenreader">pink text: </span>
           There are fun colors as well!
-          </p>
+          </p> <!---->
+
           <hr>
           </div>
 
 
           </div>
           
+<div class="mb-0 mt-auto">
+<div id="copy-grid" class="h-fit">
+<div id="copy-html-div">
+  <button id="copy-html-button" class="w-full bg-reddark text-white h-full">Copy HTML</button>
+</div>
+
+<div id="copy-css-div">
+  <button id="copy-css-button" class="w-full bg-orangedark text-white h-full" >Copy CSS</button>
+</div>
+<div id="show-copy-grid" class="bg-bluedark text-white">
+  <button id="show-copy-grid-button" class="">show?</button>
+</div>
+</div>
+
+<div class="flex p-0 w-full" id="html-css-div">
+  <textarea class="" type="text" id = "html-output">
+Your HTML will appear here
+    </textarea>
 
 
+  <textarea class="" type="text" id = "css-to-copy">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quo praesentium ab voluptatibus a nobis, harum voluptas commodi omnis ea fugit quos magni. Quas voluptatum, soluta quibusdam asperiores ipsam tenetur.
+  </textarea>
 
-
-           </div>
+</div>
+</div>
+</div>
           </div>
           
-          <footer class="mb-4 border-solid border-2 border-bluedark dark:border-brightlight" ></footer>
+          <footer class=" h-4 border-solid border-t-4 border-bluedark dark:border-brightlight" ></footer>
         </div>
-<!-- 
 
-<br>
-<div class="easy-to-read">
 
-<div class="html-box copy-box">
-<button id="copy-html-button"  >Copy HTML</button>
-<textarea class="large-input autoresizing" type="text" id = "html-output">
-Your HTML will appear here
-</textarea>
-</div>
-<br>
-
-<div class="css-box copy-box">
-<button id="copy-css-button" class="autoresizing" >Copy CSS</button>
-<!--I've added some JS so this textarea grabs the text from mcpoem.txt->
-<textarea class="large-input" type="text" id = "css-to-copy"></textarea>
-
-</div>
-</div>
-<br> -->
 <script src="JS/mcpoem.js"></script> 
 <script src="JS/gen.js"></script>
-
 </body>
 </html>
