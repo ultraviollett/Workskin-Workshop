@@ -28,6 +28,15 @@ h1 {
 
 h1.titlecard{
   font-size: 10vw;
+  overflow: hidden;
+
+}
+
+@media screen and (min-width: 1200px) {
+  h1.titlecard{
+    font-size:  6.5em;
+  }
+
 }
 
 h2 {
