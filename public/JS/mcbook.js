@@ -1,7 +1,7 @@
 function addText() {
     //adds text from input-text in realtime to book on webpage
     
-    var x = allReplace($('#input-text').val());
+    const x = $('#input-text').val();
 
     document.getElementById("output-div").innerHTML = x;
     const fullThing = 

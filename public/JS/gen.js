@@ -6,22 +6,8 @@ $("#controls").hide();
 
 $("#html-css-div").hide();
 
-isDisabled = false; //for workskin
 $("#disabled-workskin").attr("disabled", "disabled"); //starts off disabled
 
-function disableWorkskin(){
-    if (!isDisabled){
-        $("#ao3-workskin").attr("disabled", "disabled");
-        $("#disabled-workskin").removeAttr("disabled");
-        $("#disable-workskin-label").text("Workskin Disabled")
-        isDisabled = true;
-    }else{
-        $("#ao3-workskin").removeAttr("disabled");
-        $("#disabled-workskin").attr("disabled", "disabled");
-        $("#disable-workskin-label").text("Workskin Enabled")
-        isDisabled = false;
-    }
-}
 
 //https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard 
 //read above over
@@ -93,6 +79,44 @@ function pasteIconURL(idToPaste="", iconChoose=""){
         
     }  
 
+function switchDarkLight(isDark = false){
+    //checks if website is in dark or light mode, used for both manual check and browser default
+    if (isDark) {
+        $("html").addClass("dark");
+        $('#show-notes-img').attr('src','CSS/img/BRIGHTARROWUP.svg'); 
+        $('#show-controls-img').attr('src','CSS/img/BRIGHTARROWDOWN.svg'); 
+        $('#dark-mode').prop( "checked", true );
+        $("#dark-mode-label").text("Dark Mode");
+
+        //grabs arrow img url depending on if it needs to points up or down
+        const arrowUrl = $("#html-css-div").is(":hidden") ? 'CSS/img/BLUEDARKARROWUP.svg' : 'CSS/img/BLUEDARKARROWDOWN.svg';
+
+        $('#show-copy-grid-img').attr('src', arrowUrl); 
+        
+        
+    }else{
+        $("html").removeClass("dark");
+        $('#show-notes-img').attr('src','CSS/img/BLUEDARKARROWUP.svg'); 
+        $('#show-controls-img').attr('src','CSS/img/BLUEDARKARROWDOWN.svg'); 
+        $('#dark-mode').prop( "checked", false );
+        $("#dark-mode-label").text("Light Mode");
+
+        //grabs arrow img url depending on if it needs to points up or down
+        const arrowUrl = $("#html-css-div").is(":hidden") ? 'CSS/img/BRIGHTARROWUP.svg' : 'CSS/img/BRIGHTARROWDOWN.svg';
+
+        $('#show-copy-grid-img').attr('src', arrowUrl); 
+    }
+
+}
+
+$( document ).ready(function() {
+    switchDarkLight(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+    $('#disabled-workskin-btn').prop( "checked", true );
+
+
+});
+
 $(function() {
     $('#copy-html-button').on('click', function() {
         let tocopy = $("#html-output").val();
@@ -132,10 +156,16 @@ $('#show-copy-grid-button').on('click', function() {
     //compiles the whole code together as is currently
     if ( $("#html-css-div").is(":hidden") ){
         $("#html-css-div").slideDown();
-        $("#show-copy-grid-button").text("hide?");  
+        
+        const arrowUrl = $('input[id="dark-mode"]:checked').val() ? 'CSS/img/BLUEDARKARROWDOWN.svg' : 'CSS/img/BRIGHTARROWDOWN.svg';
+
+        $('#show-copy-grid-img').attr('src', arrowUrl); 
+
     }else{
         $("#html-css-div").slideUp();
-        $("#show-copy-grid-button").text("show?");   
+        const arrowUrl = $('input[id="dark-mode"]:checked').val() ? 'CSS/img/BLUEDARKARROWUP.svg' : 'CSS/img/BRIGHTARROWUP.svg';
+
+        $('#show-copy-grid-img').attr('src', arrowUrl); 
     }
 
 
@@ -143,11 +173,25 @@ $('#show-copy-grid-button').on('click', function() {
 
 
 $('#dark-mode').on('click', function() {
-    if($('input[id="dark-mode"]:checked').val()){
-    $("html").addClass("dark");
+    switchDarkLight($('input[id="dark-mode"]:checked').val());
+
+});
+
+
+$('#disabled-workskin-btn').on('click', function() {
+
+    if ($('input[id="disabled-workskin-btn"]:checked').val()){
+        $("#ao3-workskin").removeAttr("disabled");
+        $("#disabled-workskin").attr("disabled", "disabled");
+        $("#disabled-workskin-label").text("Workskin Enabled");
+
     }else{
-        $("html").removeClass("dark");
-    }
+
+        $("#ao3-workskin").attr("disabled", "disabled");
+        $("#disabled-workskin").removeAttr("disabled");
+        $("#disabled-workskin-label").text("Workskin Disabled");
+}
+
 });
 
 });

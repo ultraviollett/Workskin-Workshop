@@ -18,14 +18,14 @@
   background-repeat:no-repeat;
   margin: auto;
   background-size: 100% 100%;
-  padding: 1em 3em 5em 3em;
+  padding: 30px 37px 5em 37px;
 
   overflow-y: auto;
 
   width: 60vw;
   height: 74vw;
-  max-width: 250px;
-  max-height: 308px;
+  max-width: 375px;
+  max-height: 462px;
 
   color: black;
 }

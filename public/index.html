@@ -8,20 +8,30 @@
   <link rel="stylesheet" href="./dist/output.css">
   <link rel="stylesheet" href="./CSS/index.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script src="JS/gen.js"></script>
-<script src="JS/index.js"></script>
+
 </head>
 <body class="bg-slate-200 text-darkdark dark:bg-darkdark dark:text-light ">
 
 <div class="flex flex-col justify-between align-middle w-screen min-h-screen ">
 
-  <header class="flex justify-between text-bluedark dark:text-bright h-10 border-b-4 border-bluedark dark:border-brightlight">  
+  <header class=" overflow-hidden flex justify-between text-bluedark dark:text-bright h-10 border-b-4 border-bluedark dark:border-brightlight">  
     <button class=" align-middle px-3 font-bold pt-2" onclick="window.location.href = 'index.html';">
       HOME</button>
-      <div class="flex items-center px-4">
-        <label for="dark-mode">Dark Mode</label>
-        <input type="checkbox" id="dark-mode" class=" ml-2">
-    
+      <div class="flex items-center px-4 justify-center">
+    <label for="dark-mode" id="dark-mode-label">Dark Mode</label>
+    <div class=" ml-2 mt-[6px]">
+    <input type="checkbox" class="checkbox-bipolar-input" id="dark-mode" onclick="disableWorkskin()">
+    <label for="dark-mode">
+      <span class="checkbox-bipolar">
+        <span class="on">
+          L
+        </span>
+        <span class="off">
+          D
+        </span>
+      </span>
+    </label>
+    </div>
       </div>
   </header>
 <div class="flex flex-wrap justify-around bg-black-300 max-w-5xl align-middle m-auto">
@@ -68,9 +78,10 @@
     </div>
     </div>
     
-    <footer class="mb-4 border-solid border-2 border-bluedark dark:border-brightlight" ></footer>
+    <footer></footer>
   </div>
 
-
+<script src="./JS/gen.js"></script>
+<script src="./JS/index.js"></script>
 </body>
 </html>

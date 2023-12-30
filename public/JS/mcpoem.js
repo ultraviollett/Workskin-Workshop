@@ -39,7 +39,7 @@ function addSurroundingDiv(x){
 function addNewText(){
     const color = findColor(); //find color picked
 
-    const text = DOMPurify.sanitize($("#input-text").val());;//get text from input-text box, keeps paragraphs
+    const text = DOMPurify.sanitize($("#input-text").val());//get text from input-text box, keeps paragraphs
 
     x = `
 <p class="${color}">

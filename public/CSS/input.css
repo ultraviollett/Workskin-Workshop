@@ -73,25 +73,6 @@ button:hover{
   z-index: 10;
 }
 
-.nav:hover{
-  background-color:#87bba2;
-  border-top: none;
-}
-
-
-
-.whitetext{
-  color:white;
-}
-
-.ao3sim{
-  display: block;
-  height:max-content;
-  background-color: white;
-  padding: 10px 10%;
-  font-family: 'Times New Roman', Times, serif;
-  line-height: 1.5;
-}
 
 
 
@@ -107,79 +88,8 @@ input, select{
   color: rgba(0, 0, 0, 0.6);
 }
 
-input:focus, select:focus, textarea:focus{
-  outline: none !important;
-}
 
 
-
-
-
-textarea{
-  height: 1.5em;
-  border: 3px dotted rgba(0, 0, 0, 0.744);
-  min-height: 2em;
-  overflow-y:hidden;
-  margin: 2px auto 2px 5px;
-  width: 50vw;
-  min-width: 4cm;
-  max-width: 6cm;
-  box-sizing: border-box;
-  padding: 5px;
-  /* Match form field borders */
-  vertical-align: text-top;
-  background-color: unset;
-  font-weight: bold;
-}
-
-textarea::placeholder{
-  color: rgba(0, 0, 0, 0.6);
-  font-family: monospace;
-  font-size: 1.05em;
-}
-
-textarea.big-text::placeholder{
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-
-
-.large-input{
-  min-height: 3cm;
-  overflow-y:hidden;
-  width: 90% !important;
-  max-width: 15cm;
-  box-sizing: border-box;
-  padding: 5px;
-  /* Match form field borders */
-  vertical-align: text-top;
-  
-}
-
-.largeish-input{
-
-  min-height: 1.5cm;
-  overflow-y:hidden;
-  width: 90% !important;
-  max-width: 15cm;
-  box-sizing: border-box;
-  padding: 5px;
-  /* Match form field borders */
-  vertical-align: text-top;
-
-}
-
-.long-input{
-  min-height: 2em;
-  overflow-y:hidden;
-  width: 90% !important;
-  max-width: 15cm;
-  box-sizing: border-box;
-  padding: 5px;
-  /* Match form field borders */
-  vertical-align: text-top;
-}
 
 
 fieldset{
@@ -223,27 +133,6 @@ fieldset{
   margin-bottom: 0.5em;
 }
 
-
-.columnify{
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-}
-
-.columnify>div{
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  margin: 0 10vw 0 0;
-}
-
-.columnify>div>p{
-  margin: 0;
-}
-
-.columnify .important{
-  font-weight: bold;
-}
 
 .distinguisher{
   display: flex;
@@ -404,80 +293,6 @@ to make it easier to read when on desktop
 
 .snuggledown{
   margin-bottom: 2px;
-}
-
-
-
-/*Toggle button*/
-
-#toggle-div{
-  display: flex;
-  align-items: center;
-  margin: 5px;
-}
-
- /* The switch - the box around the slider */
- .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 40px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  border: var(--darkestval) dotted 4px;
-  
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--highlight);
-
-  transition: .1s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  right: 4px;
-  bottom: 4px;
-  border: var(--darkestval) solid 3px;
-
-
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: unset;
-}
-
-
-input:checked + .slider:before {
-
-  -ms-transform: translateX(-18px);
-  transform: translateX(-18px);
-}
-
-#disable-workskin-label{
-  padding: 10px;
-  font-weight: bold;
-  display: block;
-  vertical-align: middle;
-  font-size: 1.2em;
-
 }
 
 

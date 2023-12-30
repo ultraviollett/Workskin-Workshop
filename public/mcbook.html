@@ -1,88 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<base target="_blank">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WW Book Generator</title>
-    <link rel="stylesheet" href="CSS/input.css">
+    <title>WW Poem Generator</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="dist/output.css">
+    
     <link rel="stylesheet" href="CSS/mcbook.css" id="ao3-workskin">
     <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" integrity="sha512-H+rglffZ6f5gF7UJgvH4Naa+fGCgjrHKMgoFOGmcPTRwR6oILo5R+gtzNrpDp7iMV3udbymBVjkeZGNz1Em4rQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
   </head>
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
-    <body>
-<button class="nav" onclick="window.location.href = 'index.html';">back</button>
+    <body class="generator">
+      <div>
+        <header>  
+          <button class="nav" onclick="window.location.href = 'index.html';">
+            HOME</button>
 
-<div class="note">
-  <br><br><br>
-  <p>NOTES:</p>
-<li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/125098090">here</a>! I am the creator</li>
 
+            <div class="dark-mode-div">
+          <label for="dark-mode" id="dark-mode-label">Dark Mode</label>
+          <div class=" ml-2 mt-[6px]">
+          <input type="checkbox" class="checkbox-bipolar-input" id="dark-mode">
+          <label for="dark-mode">
+            <span class="checkbox-bipolar">
+              <span class="on">
+                L
+              </span>
+              <span class="off">
+                D
+              </span>
+            </span>
+          </label>
+          </div>
+            </div>
+        </header>
+      <div>
+      
+        <div class="w-full lg:w-2/5">
+    
+<div id="notes">
+  <p class="font-bold">NOTES:</p>
+<div class="m-7 mt-2 add-scroll">
+  <li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/125098090">here</a>! I am the creator</li>
 </li>
+<li>Use the Disable Workskin button to see how your HTML looks without its workskin.</li>
+<li>Refresh the page to start over.</li>
+
+</div >
+
+<div class="mb-0 mt-auto">
+<button id="show-controls" class="button-big-default">Continue to Generator <img src="CSS/img/BLUEDARKARROWDOWN.svg" width="50" id="show-controls-img"></button>
+</div>
 </div>
 
-<div class="easy-to-read easy-to-read-start">
-
-
-
-<textarea type="text" id="input-text" class="large-input big-text" oninput="addText()" placeholder="Input Text here">
+<div id="controls">
+  <div class="mb-auto mt-0">
+    <button id="show-notes" class="button-big-default mb-3">Back to Notes <img src="CSS/img/BLUEDARKARROWUP.svg" width="50" id="show-notes-img"></button>
+    </div>
+<div id="controls-inputs-div">
+<div>
+  <h2 class="mb-2 text-base">Minecraft Book Generator</h2>
+<textarea type="text" id="input-text" class=" h-36 p-2 text-black" oninput="addText()" placeholder="Input Text here">
 </textarea>
-
-
-<div id="toggle-div">
-  <label class="switch">
-  <input type="checkbox" onclick="disableWorkskin()" id="disable-workskin">
-  <span class="slider"></span>
+</div>
+</div>
+<div>
+  
+  <div id="toggle-div" class="flex">
+<div>
+  <input type="checkbox" class="checkbox-bipolar-input" id="disabled-workskin-btn" onclick="disableWorkskin()">
+  <label for="disabled-workskin-btn">
+    <span class="checkbox-bipolar">
+      <span class="on">
+        I
+      </span>
+      <span class="off">
+        O
+      </span>
+    </span>
   </label>
-  <label for="disable-workskin"><span id="disable-workskin-label">Workskin Enabled</span></label>
+</div>
+  <label for="disabled-workskin-btn" id="disabled-workskin-label">
+  Workskin Enabled
+  </label>
+  </div>
 </div>
 
+
+
 </div>
-
-
-
-<br>
+  
+</div>
+<div id="output-and-copy">
 
 
 <div id="output-div">
 
-<div class="mcbook" align="center">
-<p class="screenreader" align="center"><small> -- Minecraft Book: -- </small></p>
-<hr>
-<p>
-Dear Diary,
-<br><br>
-This is an example text to demonstrate this minecraft book.
-<br><br>
-Once you add text to the input box, it will appear here.
+  <div class="mcbook" align="center">
+    <p class="screenreader" align="center"><small> -- Minecraft Book: -- </small></p>
+    <hr>
+    <p>
+    Dear Diary,
+    <br><br>
+    This is an example text to demonstrate this minecraft book.
+    <br><br>
+    Once you add text to the input box, it will appear here.
+    
+    </p>
+    <hr>
+    </div>
 
-</p>
-<hr>
+
+</div>
+          
+<div class="mb-0 mt-auto">
+<div id="copy-grid">
+<div id="copy-html-div">
+  <button id="copy-html-button">Copy HTML</button>
 </div>
 
+<div id="copy-css-div">
+  <button id="copy-css-button">Copy CSS</button>
+</div>
+<div id="show-copy-grid">
+  <button id="show-copy-grid-button"><img src="./CSS/img/BRIGHTARROWUP.svg" id="show-copy-grid-img">.</button>
+</div>
 </div>
 
-<div class="easy-to-read">
-<div class="html-box copy-box">
-<button id="copy-html-button"  >Copy HTML</button>
-<textarea class="large-input" type="text" id = "html-output">
+<div id="html-css-div">
+  <textarea type="text" id = "html-output">
 Your HTML will appear here
-</textarea>
-</div>
-<br>
+    </textarea>
 
-<div class="css-box copy-box">
-  
-<button id="copy-css-button">Copy CSS</button>
-<!--I've added some JS so this textarea grabs the text from mcpoem.txt-->
-<textarea class="large-input" type="text" id = "css-to-copy">
-</textarea>
+  <textarea type="text" id = "css-to-copy">
+  </textarea>
+
+</div>
+</div>
 </div>
 </div>
 
-<script src="JS/gen.js"></script> 
-<script src="./JS/mcbook.js"></script> 
+<footer></footer>
 
+</div>
+
+
+<script src="JS/mcbook.js"></script> 
+<script src="JS/gen.js"></script>
 </body>
 </html>
