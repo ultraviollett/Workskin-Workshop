@@ -4,14 +4,16 @@ $("#unfinished").hide();
 
 });
 
-function showUnfinished(){
-    if($('input[id="show-unfinished"]:checked').val()){
-        $("#unfinished").slideDown();
-    }else{
-        $("#unfinished").slideUp();
-    }
-}
-$(function() {
-jQuery(".titlecard").fitText(0.5);
 
+$(function() {
+
+    $('#show-unfinished').on('click', function() {
+        
+        if($('input[id="show-unfinished"]:checked').val()){
+            $("#unfinished").slideDown();
+        }else{
+            $("#unfinished").slideUp();
+        }
+
+    });
 });
