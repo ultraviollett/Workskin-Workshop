@@ -1,7 +1,8 @@
 function addText() {
     //updates whenever text is updated, adds text to inside button
-    const x = allReplace(document.getElementById("buttontext").value);
-    
+    let x = $("#input-text").val().replace(/\r?\n/g, '<br />');
+    x = DOMPurify.sanitize( x );
+
     //adds HTML to be copied to textarea
     const fullThing = `<div class="mcbuttondiv">
 <p class="screenreader" align="center">

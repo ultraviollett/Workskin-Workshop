@@ -13,7 +13,7 @@ function addSurroundingDiv(x){
     const fade = $('input[id="fade"]:checked').val() ? " fade" : "";
     //adds surrounding div to current code
     var bg = $("select#bg-choose").children("option:selected").val();
-    
+
 
     const fullThing = `<div class="mcchat ${bg}${fade}">
     <div class="screenreader" align=center><small>-- Minecraft Chat: --</small></div>
@@ -26,12 +26,15 @@ function addSurroundingDiv(x){
 
 function addNewText(){
     const type = findTextType(); //find color picked
-    var text = allReplace( $("#input-text").val() ); //gets text and replaces any values that confuse html
+
+    let text = $("#input-text").val().replace(/\r?\n/g, '<br />');
+
+    text = DOMPurify.sanitize( text );
 
     if (type == "joinleft"){
-        text = `[${text}]`;
+        text = `<span class=screenreader>[</span>${text}<span class=screenreader>]</span>`;
     } else if (type == "whisper"){
-        text = `(${text})`;
+        text = `<span class=screenreader>(</span>${text}<span class=screenreader>)</span>`;
     }
 
     const x = `<p>

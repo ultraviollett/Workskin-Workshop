@@ -39,8 +39,8 @@ function addSurroundingDiv(x){
 function addNewText(){
     const color = findColor(); //find color picked
 
-    const text = DOMPurify.sanitize($("#input-text").val());//get text from input-text box, keeps paragraphs
-
+    let text = $("#input-text").val().replace(/\r?\n/g, '<br />');
+    text = DOMPurify.sanitize( text );
     x = `
 <p class="${color}">
 <span class="screenreader"> ${color} text: </span>

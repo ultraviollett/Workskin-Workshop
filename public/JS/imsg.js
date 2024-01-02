@@ -245,7 +245,9 @@ function switchName(){
 
 function addNewText(){
     //adds text of message
-    const x = $("#input-text").val().replace(/\r?\n/g, '<br />');
+    let x = $("#input-text").val().replace(/\r?\n/g, '<br />');
+    x = DOMPurify.sanitize( x );
+
     return `<dd>${x}</dd>`;
 
 }

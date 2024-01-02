@@ -1,6 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<base target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW Poem Generator</title>
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/mcchat.css" id="ao3-workskin">
+    <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" integrity="sha512-H+rglffZ6f5gF7UJgvH4Naa+fGCgjrHKMgoFOGmcPTRwR6oILo5R+gtzNrpDp7iMV3udbymBVjkeZGNz1Em4rQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+  </head>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
+    <body class="generator">
+      <div>
+        <header>  
+          <button class="nav" onclick="window.location.href = 'index.html';">
+            HOME</button>
+
+
+            <div class="dark-mode-div">
+          <label for="dark-mode" id="dark-mode-label">Dark Mode</label>
+          <div class=" ml-2 mt-[6px]">
+          <input type="checkbox" class="checkbox-bipolar-input" id="dark-mode">
+          <label for="dark-mode">
+            <span class="checkbox-bipolar">
+              <span class="on">
+                L
+              </span>
+              <span class="off">
+                D
+              </span>
+            </span>
+          </label>
+          </div>
+            </div>
+        </header>
+      <div class="flex flex-wrap justify-evenly w-full align-middle ">
+      
+        <div class="w-full lg:w-2/5">
+    
+<div id="notes">
+  <p class="font-bold">NOTES:</p>
+<div class="m-7 mt-2 add-scroll">
+<li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/98981022#workskin">here</a>! I am the creator.</li>
+<li>I am planning to make it so you can pick any colour with a colour picker to add to the text,
+  if you want to do so currently, there are instructions on the AO3 page linked above.
+</li>
+<li>Use the Disable Workskin button to see how your HTML looks without its workskin.</li>
+<li>Refresh the page to start over.</li>
+</div >
+<div class="mb-0 mt-auto">
+<button id="show-controls" class="button-big-default">Continue to Generator <img src="CSS/img/BLUEDARKARROWDOWN.svg" width="50" id="show-controls-img"></button>
+</div>
+</div>
+
+<div id="controls">
+  <div class="mb-auto mt-0">
+    <button id="show-notes" class="button-big-default mb-3">Back to Notes <img src="CSS/img/BLUEDARKARROWUP.svg" width="50" id="show-notes-img"></button>
+    </div>
+<div id="controls-inputs-div">
+<div>
+
+  <b>Add Background:</b>
+<form class="mb-3 mt-1">
+<select id="bg-choose">
+
+  <option value="nobg">[No Background]</option>
+  <option value="sun">Plain sky with the sun</option>
+  <option value="clouds">Plain sky with clouds</option>
+  <option value="mumbo-base">Fancy build (MumboJumbo)</option>
+  <option value="buildings">Urban build</option>
+  <option value="lmanhole">L'manhole at night (DreamSMP)</option>
+  <option value="evo-end">The End Portal with the EvoSMP Symbol</option>
+  <option value="evo-platform">A platform with the EvoSMP symbol</option>
+  <option value="redstone">Redstone contraptions</option>
+  <option value="glass-walls">Sunset with glass walls</option>
+  <option value="ocean">Ocean</option>
+  <option value="nether-portal">Nether portal in cave</option>
+  <option value="village-in-forest">Village in forest</option>
+  <option value="storage">Storage system near trees</option>
+  <option value="in-ocean">Under the ocean</option>
+
+</select>
+</form>
+
+
+<b>Input Text:</b>
+<textarea type="text" id="input-text" class="mb-3" placeholder="write text here">
+</textarea>
+
+<h3>Pick Type of Text:</h3>
+
+<form id="choose-type">
+<fieldset>
+
+  <input type="radio" id="white" name="color" value="" checked/><label for="white"> Default [White]</label><br>
+  <input type="radio" id="green" name="color" value="joinleft" /><label for="green"> Joined/Left Text [Yellow]</label><br>
+  <input type="radio" id="cyan" name="color" value="whisper" /><label for="cyan"> Whispers [Grey Italics]</label>
+
+  </fieldset>
+</form>
+
+<fieldset class="mt-4">
+<input type="checkbox" id="show-colored-text">
+<label for="show-colored-text">Add coloured text within chat message?</label>
+</fieldset>
+
+<div id="colored-text-opt" class="my-3">
+  <form>
+    <select id="colored-text-choose" class=" w-fit border-[1px] p-[2px] px-1">
+    
+      <option>red</option>
+      <option>orange</option>
+      <option>yellow</option>
+      <option>green</option>
+      <option>blue</option>
+      <option>purple</option>
+      <option>pink</option>
+      <option>grey</option>
+  
+    </select>
+    </form>
+<p></p>
+<div class="flex w-full flex-wrap items-center">
+<p class="text-xs whitespace-nowrap">&lt;span class = "<span id="display-colored-text">red</span>"&gt;</p>
+<p><textarea id="input-colored-text" placeholder="input text" class="h-[1.5em] p-0 px-3 small !w-[7em]"></textarea></p>
+<p class="text-xs">&lt;/span&gt;</p>
+<p><button id="add-colored-text" class="simple">Add</button></p>
+</div>
+  
+</div>
+<fieldset>
+  <input type="checkbox" id="fade">
+  <label for="fade">Add fade to chat?</label>
+</fieldset>
+
+</div>
+</div>
+  <div class="my-3">
+  <button id="add" class="w-full button-big-default">Add</button>
+  </div>
+  
+  <div id="toggle-div" class="flex">
+<div>
+  <input type="checkbox" class="checkbox-bipolar-input" id="disabled-workskin-btn" onclick="disableWorkskin()">
+  <label for="disabled-workskin-btn">
+    <span class="checkbox-bipolar">
+      <span class="on">
+        I
+      </span>
+      <span class="off">
+        O
+      </span>
+    </span>
+  </label>
+</div>
+  <label for="disabled-workskin-btn" id="disabled-workskin-label">
+  Workskin Enabled
+  </label>
+</div>
+
+
+
+</div>
+  
+</div>
+<div id="output-and-copy">
+
+
+<div id="output-div">
+
+  <div class="mcchat clouds fade">
+    <div class="screenreader" align=center><small>-- Minecraft Chat: --</small></div>
+    <hr>
+    <p><span class="">
+    Server Updating...
+    </span></p>
+    <p><span class="">
+    Server Updating...
+    </span></p>
+    <p><span class="">
+    Server Updating...
+    </span></p>
+    <p><span class="">
+    Server Updated!
+    </span></p>
+  </span></p>
+    <p><span class="joinleft">
+      <span class=screenreader>[</span>HelloWorld joined the game<span class=screenreader>]</span>
+    </span></p>
+    <p><span class="">
+    &lt;HelloWorld&gt; Hi!
+    </span></p><p><span class="">
+    &lt;HelloWorld&gt; Click add to start creating your minecraft chat
+    </span></p><p><span class="">
+    &lt;HelloWorld&gt; there are three types of text- the default, joined/left text, and whispers
+    </span></p><p><span class="whisper">
+      <span class=screenreader>(</span>HelloWorld whispered to you: whispers look like this<span class=screenreader>)</span>
+    </span></p><p><span class="">
+    &lt;HelloWorld&gt; You can make the first messages start to fade out, and you can add <span class="red">cu</span><span class="orange">st</span><span class="yellow">om </span><span class="green">co</span><span class="blue">lo</span><span class="purple">u</span><span class=pink>rs</span>
+to your message!
+    </span></p><p><span class="">
+    &lt;HelloWorld&gt; just remember that custom colours won't show up with the workskin disabled
+    </span></p><hr></div>
+
+
+</div>
+          
+<div class="mb-0 mt-auto">
+<div id="copy-grid">
+<div id="copy-html-div">
+  <button id="copy-html-button">Copy HTML</button>
+</div>
+
+<div id="copy-css-div">
+  <button id="copy-css-button">Copy CSS</button>
+</div>
+<div id="show-copy-grid">
+  <button id="show-copy-grid-button"><img src="./CSS/img/BRIGHTARROWUP.svg" id="show-copy-grid-img">.</button>
+</div>
+</div>
+
+<div id="html-css-div">
+  <textarea type="text" id = "html-output">
+Your HTML will appear here
+    </textarea>
+
+  <textarea type="text" id = "css-to-copy">
+  </textarea>
+
+</div>
+</div>
+</div>
+</div>
+
+<footer></footer>
+
+</div>
+
+
+<script src="./JS/mcchat.js"></script> 
+<script src="./JS/gen.js"></script>
+</body>
+</html>
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WW Poem Generator</title>
@@ -10,7 +262,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
   </head>
-  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
+
     <body>
 <button class="nav" onclick="window.location.href = 'index.html';">back</button>
 
@@ -168,7 +420,6 @@ Your HTML will appear here
 
 <div class="css-box copy-box">
 <button id="copy-css-button" class="autoresizing" >Copy CSS</button>
-<!--I've added some JS so this textarea grabs the text from mcpoem.txt-->
 <textarea class="large-input" type="text" id = "css-to-copy"></textarea>
 
 </div>

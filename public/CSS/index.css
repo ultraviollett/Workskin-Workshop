@@ -150,11 +150,27 @@ textarea {
   padding: 4px;
   width: 90%;
   margin: 5px;
-  min-height: 3em;
+
 }
 
 textarea::placeholder{
   font-size: small;
+}
+
+textarea.small {
+  width: inherit;
+}
+
+button.simple{
+  border: 3px dotted #105b63ab;
+  padding: 3px 8px;
+  text-align: center;
+
+  margin: 3px auto;
+}
+
+.dark button.simple{
+  border-color: rgba(240, 248, 255, 0.787);
 }
 
 button.nav{
@@ -458,8 +474,8 @@ textarea#html-output, textarea#css-to-copy {
 
 
 .almost-full-height, #output-and-copy, #notes, #controls{
-  height: calc(100vh - 63px);
-  height: calc(100svh - 63px);
+  height: calc(100vh - 64px);
+  height: calc(100svh - 60px);
 
 
 }
@@ -585,4 +601,20 @@ https://codepen.io/alvarotrigo/pen/jOZOxNr
   display: flex;
   align-items: center;
   font-family: 'Courier New', Courier, monospace;
+}
+
+select{
+  width: 100%;
+  max-width: 400px;
+  background-color: unset;
+  border: 2px solid currentColor;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.dark select option {
+  background-color: var(--darkdark);
+  border: 0;
+  border: blue solid;
+  margin: -2px;
 }

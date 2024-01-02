@@ -1,9 +1,9 @@
 function addText() {
     //adds text from input-text in realtime to book on webpage
     
-    const x = $('#input-text').val();
+    let x = $("#input-text").val().replace(/\r?\n/g, '<br />');
+    x = DOMPurify.sanitize( x );
 
-    document.getElementById("output-div").innerHTML = x;
     const fullThing = 
 `
 <div class="mcbook" align="center">
@@ -15,9 +15,8 @@ function addText() {
 
 `;
     
-    
-    document.getElementById("html-output").value = fullThing;
     $('#output-div').html(fullThing);
+    $('#html-output').text(fullThing);
 
 }
 

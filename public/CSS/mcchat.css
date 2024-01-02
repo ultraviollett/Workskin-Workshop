@@ -2,6 +2,7 @@
   padding: 7em 0.5em 1em 0.5em;
   background-repeat: no-repeat;
   background-size: cover; 
+  margin: 15px;
 }
 
 .mcchat .screenreader {
@@ -92,7 +93,7 @@
   font-weight: bold;
   font-family: Verdana, sans-serif;
   line-height: 1.5;
-  width: 70%;
+  width: 80%;
   max-width: 17cm;
 }
 
