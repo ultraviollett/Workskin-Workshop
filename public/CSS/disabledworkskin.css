@@ -11,8 +11,8 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 color: black;
 overflow-wrap: break-word;
 text-wrap: wrap;
-line-height: 1.5;
-background-color: antiquewhite;
+padding: 15px;
+
 
 }
 
@@ -41,3 +41,20 @@ background-color: antiquewhite;
 
 }
 
+#output-div p {
+    margin: 1.286em auto;
+    padding: 0;
+    line-height: 1.5;
+}
+
+#output-div hr{
+    width: 33%;
+    margin: .875em auto 1.2525em;
+    border: 1px solid;
+}
+
+#output-div h1, #output-div h2, #output-div h3, #output-div h4, #output-div h5, #output-div h6 {
+    font-family: Georgia,serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}

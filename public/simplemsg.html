@@ -1,6 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<base target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW Poem Generator</title>
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/simplemsg.css" id="ao3-workskin">
+    <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" integrity="sha512-H+rglffZ6f5gF7UJgvH4Naa+fGCgjrHKMgoFOGmcPTRwR6oILo5R+gtzNrpDp7iMV3udbymBVjkeZGNz1Em4rQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+  </head>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
+    <body class="generator">
+      <div>
+        <header>  
+          <button class="nav" onclick="window.location.href = 'index.html';">
+            HOME</button>
+
+
+            <div class="dark-mode-div">
+          <label for="dark-mode" id="dark-mode-label">Dark Mode</label>
+          <div class=" ml-2 mt-[6px]">
+          <input type="checkbox" class="checkbox-bipolar-input" id="dark-mode">
+          <label for="dark-mode">
+            <span class="checkbox-bipolar">
+              <span class="on">
+                L
+              </span>
+              <span class="off">
+                D
+              </span>
+            </span>
+          </label>
+          </div>
+            </div>
+        </header>
+      <div class="flex flex-wrap justify-evenly w-full align-middle ">
+      
+        <div class="w-full lg:w-2/5">
+    
+<div id="notes">
+  <p class="font-bold">NOTES:</p>
+<div class="m-7 mt-2 add-scroll">
+<li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/98981022#workskin">here</a>! I am the creator.</li>
+<li>I am the creator of this workskin, but I haven't published it anywhere online</li>
+<li>Because I wanted it to be super simple, There is no way to add character names. For screenreaders / a disabled workskin, it will say 'right text:' and 'left text:'. You can replace those with character names if you want to improve the experience with a disabled workskin / for screenreaders.</li>  
+<li>Refresh the page to start over</li>
+</div >
+<div class="mb-0 mt-auto">
+<button id="show-controls" class="button-big-default">Continue to Generator <img src="CSS/img/BLUEDARKARROWDOWN.svg" width="50" id="show-controls-img"></button>
+</div>
+</div>
+
+<div id="controls">
+  <div class="mb-auto mt-0">
+    <button id="show-notes" class="button-big-default mb-3">Back to Notes <img src="CSS/img/BLUEDARKARROWUP.svg" width="50" id="show-notes-img"></button>
+    </div>
+<div id="controls-inputs-div">
+<div>
+<h2 class="mb-4">Simple Messaging Generator</h2>
+
+<textarea type="text" id="input-text" class="large-input big-text" placeholder="Input text here">
+</textarea>
+
+
+<fieldset>
+<legend>Pick Side:</legend>
+<div><input type="radio" id="leftchoose" name="contact" checked/><label for="leftchoose">Left</label>
+<input type="radio" id="rightchoose" name="contact"/><label for="rightchoose">Right</label> </div>
+</fieldset>
+
+</div>
+</div>
+  <div class="my-3">
+  <button id="add" class="w-full button-big-default ">Add</button>
+  </div>
+  
+  <div id="toggle-div" class="flex">
+<div>
+  <input type="checkbox" class="checkbox-bipolar-input" id="disabled-workskin-btn" onclick="disableWorkskin()">
+  <label for="disabled-workskin-btn">
+    <span class="checkbox-bipolar">
+      <span class="on">
+        I
+      </span>
+      <span class="off">
+        O
+      </span>
+    </span>
+  </label>
+</div>
+  <label for="disabled-workskin-btn" id="disabled-workskin-label">
+  Workskin Enabled
+  </label>
+</div>
+
+
+
+</div>
+  
+</div>
+<div id="output-and-copy">
+
+
+<div id="output-div">
+
+  <p class="screenreader"><small> -- Text Messages: -- </small></p>
+  <div class="simplemsg">
+  <hr>
+  <p class="screenreader" align = "right"><small> right text:</small></p>
+  <p class = "right " align = "right">
+  Wow! what a nice and unobtrusive workskin!
+  </p>
+
+  <p class="screenreader"><small> left text:</small></p>
+  <p class = "left " align = "left">
+  The font color and border will change depending if you're in dark / light mode.
+  </p>
+  <p class="screenreader"><small> left text:</small></p>
+  <p class = "left " align = "left">
+With the workskin disabled, the texts are on the same side they're supposed to be, and are labeled with "right/left text:".
+  </p>
+  <p class="screenreader" align = "right"><small> right text:</small></p>
+  <p class = "right " align = "right">
+  Feel free to add the names of your characters manually :D
+  </p>
+  <p class="screenreader" align = "right"><small> right text:</small></p>
+  <p class = "right " align = "right">
+  if you want a groupchat, use the iMessage workskin, or there may be other skins in the future!
+  </p><hr>
+  </div>
+
+
+</div>
+          
+<div class="mb-0 mt-auto">
+<div id="copy-grid">
+<div id="copy-html-div">
+  <button id="copy-html-button">Copy HTML</button>
+</div>
+
+<div id="copy-css-div">
+  <button id="copy-css-button">Copy CSS</button>
+</div>
+<div id="show-copy-grid">
+  <button id="show-copy-grid-button"><img src="./CSS/img/BRIGHTARROWUP.svg" id="show-copy-grid-img">.</button>
+</div>
+</div>
+
+<div id="html-css-div">
+  <textarea type="text" id = "html-output">
+Your HTML will appear here
+    </textarea>
+
+  <textarea type="text" id = "css-to-copy">
+  </textarea>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<footer></footer>
+
+</div>
+
+
+<script src="./JS/simplemsg.js"></script> 
+<script src="./JS/gen.js"></script>
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WW Message Generator</title>
@@ -50,10 +229,10 @@
 <br>
 <div id="output-div">
 
-  <p class="screenreader"><small> -- Text Messages: -- </small></p>
+  <p class="screenreader" ><small> -- Text Messages: -- </small></p>
   <div class="simplemsg">
   <hr>
-  <p class="screenreader"><small> right text:</small></p>
+  <p class="screenreader" align = "right"><small> right text:</small></p>
   <p class = "right " align = "right">
   Wow! what a nice and unubtrusive workskin!
   </p>
@@ -69,11 +248,11 @@
   <p class = "left " align = "left">
   Also, there is no option to add names for this one. with the workskin disabled, the texts are on the same side they're supposed to be, and are labeled "right/left text:" for screenreaders.
   </p>
-  <p class="screenreader"><small> right text:</small></p>
+  <p class="screenreader" align = "right"><small> right text:</small></p>
   <p class = "right " align = "right">
   Feel free to add the names of your characters manually :D
   </p>
-  <p class="screenreader"><small> right text:</small></p>
+  <p class="screenreader" align = "right"><small> right text:</small></p>
   <p class = "right " align = "right">
   if you want a groupchat, use the iMessage workskin, or there may be other skins in the future!
   </p><hr>

@@ -3,17 +3,39 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/input.css">
+    <link rel="stylesheet" href="./dist/output.css">
+  <link rel="stylesheet" href="./CSS/index.css">
     <link rel="stylesheet" href="CSS/tutorial.css">
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+  <script src="./JS/gen.js" type="module"></script>
     <title>WW Tutorial</title>
   </head>
-  
-    <body>
-        <button class="nav" onclick="window.location.href = 'index.html';">back</button>
-<br><br>
+  <body class="bg-slate-200 text-darkdark dark:bg-darkdark dark:text-light">
 
-<div class="tableofcontentsdiv">
-<div class="tableofcontents">
+  <header class=" overflow-hidden flex justify-between text-bluedark dark:text-bright h-10 border-b-4 border-bluedark dark:border-brightlight">  
+    <button class=" align-middle px-3 font-bold pt-2" onclick="window.location.href = 'index.html';">
+      HOME</button>
+      <div class="flex items-center px-4 justify-center">
+    <label for="dark-mode" id="dark-mode-label">Dark Mode</label>
+    <div class=" ml-2 mt-[6px]">
+    <input type="checkbox" class="checkbox-bipolar-input" id="dark-mode" onclick="disableWorkskin()">
+    <label for="dark-mode">
+      <span class="checkbox-bipolar">
+        <span class="on">
+          L
+        </span>
+        <span class="off">
+          D
+        </span>
+      </span>
+    </label>
+    </div>
+      </div>
+  </header>
+
+<div class=" w-[90vw] max-w-xl md:w-[70vw] mx-auto">
+<div class="">
 <p>
   <a href="#definitions">Definitions</a>
 </p>
@@ -30,12 +52,35 @@
   <a href="#links">Useful links</a>
 </p>
 </div>
-</div>
+
 
 <div class="easy-to-read easy-to-read-start" id="definitions">
 <h2 >Definitions</h2>
 
-
+<p>
+  <strong>Ao3 Workskin — </strong><br>
+   Ao3 allows you to add CSS to your work with 'workskins'. 
+   Like the example above, you need the workskin to add more than just basics.
+   One of the more popular things to do with workskins is to use it to mimic 
+   different things - like emails, messages, and social media sites.
+   it can add a lot of immersion and make your fic look a lot cooler,
+   especially if its a chat fic or socmed fic.
+  </p>
+  <p>
+  Let's take a look at an example with the 'simple messaging' workskin:
+  </p>
+  
+  <div class="codedemo">
+    <div class="header"><p>Without Workskin</p></div>
+    <div  class="text" >
+      <p> Bing! You got a text! </p>
+    </div>
+    <div class="header"><p>With Workskin</p></div>
+    <div  class="text" >
+      <p> <div class="simplemsgexample">Bing! You got a text!</div></p>
+    </div>
+  </div>
+  <br>
 <p>
   <strong>HTML — </strong><br>
   aka "HyperText Markup Language", code used to create webpages. 
@@ -80,30 +125,7 @@
 
 </div>
 <br>
-<p>
-<strong>Ao3 Workskin — </strong><br>
- Ao3 allows you to add CSS to your work with 'workskins'. 
- Like the example above, you need the workskin to add more than just basics.
- One of the more popular things to do with workskins is to use it to mimic 
- different things - like emails, messages, and social media sites.
- it can add a lot of immersion and make your fic look a lot cooler,
- especially if its a chat fic or socmed fic.
-</p>
-<p>
-Let's take a look at an example with the 'simple messaging' workskin:
-</p>
 
-<div class="codedemo">
-  <div class="header"><p>Without Workskin</p></div>
-  <div  class="text" >
-    <p> Bing! You got a text! </p>
-  </div>
-  <div class="header"><p>With Workskin</p></div>
-  <div  class="text" >
-    <p> <div class="simplemsgexample">Bing! You got a text!</div></p>
-  </div>
-</div>
-<br>
 For a more indepth but still beginner-friendly explanation, I've linked a few things below.
 But for the purposes of this website, as long as you know where to copy-paste everything,
 you'll be able to use these generators.
@@ -288,7 +310,7 @@ Basic HTML for copy-pasting</button>
 
 </div>
 
-
+</div>
 
 </div>
  <br><br>

@@ -16,10 +16,11 @@ function addNewMessage(x){
         //check if right radio is checked
         leftOrRight = "right";
     }
-    const inputText = allReplace($("#input-text").val() );
+    let inputText = $("#input-text").val().replace(/\r?\n/g, '<br />');
+    inputText = DOMPurify.sanitize( inputText );
 
 x =  `${x}
-<p class="screenreader"><small> ${leftOrRight} text:</small></p>
+<p class="screenreader" align = "${leftOrRight}"><small> ${leftOrRight} text:</small></p>
 <p class = "${leftOrRight} " align = "${leftOrRight}">
 ${inputText}
 </p>`;

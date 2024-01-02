@@ -1,56 +1,15 @@
-.tableofcontentsdiv{
-    display: block;
-    background-color: unset;
-    margin: 6px auto;
-    width: 80vw;
-    max-width: 15cm;
-    padding: 0;
-  }
+/*
+GEN
+*/
 
-.tableofcontents{
-    box-shadow: inset 2px -28px 21px -21px #154e34;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    
-    width: fit-content;
-    background: rgb(135,187,162);
-    background: var(--lightval);
-    padding: 10px 0 18px 10px;
-    border: 4px solid var(--middleval);
-    border-bottom: none;
-    border-radius: 10px 10px 0 0;
-    margin: auto 20px -15px -5vw;
+h2 {
+    margin: 10px auto;
+
 }
+h2::before {
+content: "## ";
 
-
-
-  .tableofcontents p{
-    margin: 0;
-    line-height: 0;
-  
-  }
-  .tableofcontents a, .tableofcontents h3{
-    font-size:0.9em;
-    color:#174061;
-    display: block;
-    text-decoration: none;
-    padding: 0.3em 40px;
-    margin: 0 0 0 -10px;
-    line-height: 1;
-    overflow: hidden;
-  }
-
-.tableofcontents h3{
-    font-size: large;
-    color: black;
 }
-  
-.tableofcontents a:hover{
-  display: block;
-  color:#03009d;
-  background-color: #579c8e;
-  }
   
 /*make buttons look nice*/
 .buttonhorizontal{
@@ -84,8 +43,8 @@ for coding demos
 .codedemo{
     display: grid;
     grid-template-columns: 1fr;
-    
-    margin: 10px -5vw;
+    color: black;
+    margin: 10px 0;
     grid-template-rows: 1.2em auto;
     grid-auto-columns: 1fr;
     grid-auto-flow: column;
@@ -175,3 +134,22 @@ for coding demos
     font-weight: bold;
     font-size: larger;
 }
+
+.buttonhorizontal button {
+    border: 3px dotted #105b63ab;
+    padding: 3px;
+    text-align: center;
+    margin: 3px auto;
+}
+
+.dark .buttonhorizontal button {
+    border-color: rgba(240, 248, 255, 0.787);
+}
+
+.buttonhorizontal button:hover {
+    background-color: #ffc78c;
+  }
+  
+  .dark .buttonhorizontal button:hover {
+    background-color: #105b63;
+  }

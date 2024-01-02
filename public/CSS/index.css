@@ -296,6 +296,7 @@ body.generator #output-and-copy {
   width: 100%;
   display: grid;
   align-items: center;
+  margin: 20px auto;
 }
 
 
@@ -486,6 +487,9 @@ textarea#html-output, textarea#css-to-copy {
   }
 
 
+  #output-and-copy, #controls {
+    min-height: 50vh;
+ }
 
   .almost-full-height, #notes {
     height: calc(100vh - 42px);
