@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/output.css">
   <link rel="stylesheet" href="./CSS/index.css">
-    <link rel="stylesheet" href="CSS/tutorial.css">
+    <link rel="stylesheet" href="./CSS/tutorial.css">
     <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
   <script src="./JS/gen.js" type="module"></script>
+  <script src="./JS/tutorial.js" type="module"></script>
     <title>WW Tutorial</title>
   </head>
   <body class="bg-slate-200 text-darkdark dark:bg-darkdark dark:text-light">
@@ -34,42 +35,37 @@
       </div>
   </header>
 
-<div class=" w-[90vw] max-w-xl md:w-[70vw] mx-auto">
-<div class="">
-<p>
-  <a href="#definitions">Definitions</a>
-</p>
-<p>
-  <a href="#usingworkshop">Using the Workshop</a>
-</p>
-<p>
-  <a href="#ownworkskin">Creating your own Workskin</a>
-</p>
-<p>
-  <a href="#owngenerator">Creating your own Workshop?</a>
-</p>
-<p>
-  <a href="#links">Useful links</a>
-</p>
+
+<div class=" w-[90vw] max-w-xl md:w-[70vw] mx-auto py-8">
+<div class="border-2 border-solid rounded-md border-current p-0 m-5 w-fit ">
+
+  <a href="#basics" class="legend-links !pt-2">The Basics</a>
+
+
+  <a href="#usingworkshop" class="legend-links text-lg font-bold">Using the Workshop</a>
+
+  <a href="#ownworkskin" class="legend-links">Creating your own Workskin</a>
+
+  <a href="#owngenerator" class="legend-links">Creating your own Workshop?</a>
+
+  <a href="#links" class="legend-links !pb-2">Useful links</a>
+
 </div>
 
 
-<div class="easy-to-read easy-to-read-start" id="definitions">
-<h2 >Definitions</h2>
+<div id="basics" >
+<h2 >The Basics</h2>
+
+
+  <h3>Ao3 Workskins —</h3>
 
 <p>
-  <strong>Ao3 Workskin — </strong><br>
-   Ao3 allows you to add CSS to your work with 'workskins'. 
-   Like the example above, you need the workskin to add more than just basics.
-   One of the more popular things to do with workskins is to use it to mimic 
-   different things - like emails, messages, and social media sites.
-   it can add a lot of immersion and make your fic look a lot cooler,
-   especially if its a chat fic or socmed fic.
+  You may have come across these before. These are how writers can add messages, emails, coloured text, and other cool things into their fics! You can create a workskin on your account, and then you add it when you create a fic.
   </p>
   <p>
   Let's take a look at an example with the 'simple messaging' workskin:
   </p>
-  
+
   <div class="codedemo">
     <div class="header"><p>Without Workskin</p></div>
     <div  class="text" >
@@ -80,12 +76,19 @@
       <p> <div class="simplemsgexample">Bing! You got a text!</div></p>
     </div>
   </div>
-  <br>
+  <p>
+    Very cool! It now resembles a text message. But how? For that, we need HTML and CSS.
+
+  </p>
+
+
+  <h3 id="show-html-abbr">HTML<span id="html-abbr-opt">, Hyper Text Markup Language</span> —</h3>
+  <p class="">
+  Code used to create webpages.
+  When you're posting a fic on Ao3, you have the option to type it in Rich Text or HTML. You may have seen people say to use the Rich Text editor instead of the HTML, and this is because HTML needs tags to work properly, though Ao3 tries to compensate by adding some automatically. 
+</p>
 <p>
-  <strong>HTML — </strong><br>
-  aka "HyperText Markup Language", code used to create webpages. 
-  You put text inside tags that makes it behave a certain way, 
-  like adding a paragraph, making the text bold, or creating a list.
+  Take a look at the example below that uses tags to bolden and italicize text.
 </p>
 
 <div class="codedemo">
@@ -98,11 +101,13 @@
   <div class="text"><p>I can be <b>bold</b>, or even <i>italics!</i></p> </div>
 
 </div>
-<br>
 <p>
-  <strong>CSS — </strong><br>
-   aka "Cascading Style Sheets", code that adds style and structure to a webpage.
-   It's usually put in a separate file, and then you use HTML tags to add it to the text.
+  There are a lot of different tags to use, but to use them effectively, you need CSS.
+</p>
+
+  <h3 id="show-css-abbr">CSS<span id="css-abbr-opt">, Cascading Style Sheets</span> —</h3>
+<p>
+   Code that adds style and structure to a webpage. This is the code that goes into the Ao3 workskin! Let's look at an example:
 
 </p>
 <div class="codedemo">
@@ -126,7 +131,15 @@
 </div>
 <br>
 
-For a more indepth but still beginner-friendly explanation, I've linked a few things below.
+<p>
+  There's a span class around the words 'pink box!'. It doesn't do anything if you don't have CSS, but that's what CSS is for.
+</p>
+<p>
+  In the CSS, '.pinkbox' is given a number of things to do (The dot is so the CSS knows pinkbox is a class and not anything else). It tells it to have pink as a background, and add padding (so the pink isn't touching the letters). Once the CSS is added, it can reference the HTML so it knows where to add all its instructions.
+</p>
+<p>
+
+If you read the CSS and HTML in the different generators, you'll notice there is a lot of stuff that you still want an explanation for. I've linked a few indepth but still beginner-friendly explanations below.
 But for the purposes of this website, as long as you know where to copy-paste everything,
 you'll be able to use these generators.
 </p>
@@ -137,82 +150,80 @@ you'll be able to use these generators.
 </div>
 
 
-</div><div class="easy-to-read" id="usingworkshop">
+</div>
+<div id="usingworkshop" class="p-3 pt-0 mt-10 border-solid border-[1px] border-bluedark dark:border-brightlight rounded-lg">
 
 <h2>How do I use the Workskin Workshop?</h2>
 <ol>
 <li>Go to the generator you want to use</li>
 <p>I've added examples so you can see what everything looks like.
-  Make sure to read the Notes so you know how it works
+  Make sure to read the Notes so you know how it works.
 </p>
 
 <li>Generate the HTML and add it to your fic</li>
 <p>
-  Click the 'Generate HTML' button, then click 'Copy'. Go to edit your fic,
-  place the HTML where you want it. Remember, it won't look like it does in the generator 
-  until you add the workskin
+  Make what you need and then click 'Copy HTML'. Go to edit your fic,
+  place the HTML where you want it. Remember, it won't look like it does in the generator until you add the workskin.
 </p>
-<li>Generate the CSS and create a workskin</li>
-<p>Go to the CSS generator and generate what you will use, then add it to a workskin. There is a more indepth tutorial on 
-  creating workskins <a href="https://archiveofourown.org/admin_posts/1370">here</a>.
-  After that, go to your fic and add the workskin to it.
+<li>Create a workskin, and add CSS</li>
+<p> There are instructions on how to create a workskin <a href="https://archiveofourown.org/admin_posts/1370">here</a>. Copy the CSS for the generator you're on, and paste it in your workskin. Go to edit your fic, and add the workskin to it.
 <li>Check everything works</li>
 <p>
   Check that what you added looks good on both desktop and mobile.
-All good? If not, check if you copy-pasted the HTML or CSS wrong. If it still doesn't work,
-or if you notice something off, send me a <a href="contactform.html">message</a>.
+All good? If not, see if you copy-pasted the HTML or CSS wrong. If it still doesn't work, or if you notice something off, send me a <a href="contactform.html">message</a>.
 </p>
 </ol>
 </div>
 
 
 
-<div class="easy-to-read" id="ownworkskin">
-  <div>
+<div class="pt-5" id="ownworkskin">
+
  <h2>How do I create my own workskin?</h2>
+ <p>
 I'm so glad you're interested! Although I try and add a lot of options
-when making the generators, it will never be as customizable as manipulating it yourself,
-or creating your own!
-<br><br>
+when making the generators, it will never be as customizable as manipulating it yourself, or of course, creating your own.
+ </p>
+ <p>
 Firstly, you need to know the basics of 
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>
  and <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS">CSS</a>. Next,
- you need somewhere to edit your code. I wouldn't write it directly on Ao3, you WRITE.
- I, personally, use 
- <a href="https://code.visualstudio.com/learn/get-started/basics">VSCode</a> to write and edit the HTML/CSS. I understand that it can be
- intimidating to download a whole ass program for making workskins, but with VSCode,
- you can download
- <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server"> Microsoft Live Preview</a>
-  to see how each change you make affects your code in real time!
+ you need somewhere to edit your code. I wouldn't write it directly on Ao3, it gets rather annoying, and doesn't update automatically.
+ </p>
+ <p>
+ I use 
+ <a href="https://code.visualstudio.com/learn/get-started/basics">VSCode</a> for HTML/CSS. I understand that it can be
+ intimidating to download a full program for making workskins, but with VSCode,
+ you can see each change in real time with  <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server"> Microsoft Live Preview</a>. Also, VSCode will give you suggestions when you type and has a lot of shortcuts. </p>
+  <p>
   I've also added a link that will take you to an HTML specific guide 
-  for using VSCode. It's for making your own website, but the setup is the 
-  exact same.
- <br>
- <br>
- I am planning on making a workskin walkthrough at some point, so
- look out for that! But at the moment, if you have any problems (even 
- if you can't get VSCode to work for whatever reason), please message me with your 
+  for using VSCode. It's for making your own website, but the setup is the exact same. Still, if this is too much setup for you, just write directly into the workskin editor. No point complicating things.
+ </p>
+ <p>
+ I <i>am</i> planning on making a walk-through where I show how to create a simple workskin, so look out for that! But at the moment, if you have any problems (even if you can't stuck at the point where you can't get VSCode to work (I've been there and it sucks)), please message me with your 
  discord and I'll help with what I can.
- <br><Br>
+ </p>
+ <p>
 For now, some general advice:
-<Br>
-<li>The CSS Ao3 allows you to use is limited. I've been told this might change in the future,
-  but for now a lot of more modern HTML won't work
+
+<li>The CSS Ao3 allows you to use is limited. I've been told this might change in the future, but for now, a lot of more modern HTML won't work.
 </li>
 <li>
-You can use only the default of flex</li>
-<li>Ao3 has some defaults for paragraphs and divs that will make your 
-  HTML look different than it does on VSCode / normally. Right click on whatever looks wonky, then click inspect and then
-  look at the CSS section, it will tell you what's affecting what element.
-<li>Ao3 automatically adds paragraphs after divs, and a few other situations, 
-  so if your code looks wonky it might also be that.
-  <br><br>
+You can use only the default of flex. If you add <kbd>Display:flex;</kbd> It will change the div so its center aligned and the child elements are spaced out, but you can't change it past that.
+</li>
+<li>
+  Ao3 has defaults that will make your HTML look different than it does on VSCode. You can use dev tools to try and figure out the issue. Use
+  <kbd>Ctrl+Shift+I</kbd> on Windows, and <kbd>Command+Option+I</kbd> on Mac. After that, find your HTML and you can inspect the CSS to see what's affecting your code.
+</li>
+  <li>Ao3 will also add paragraphs to a lot of text by default (like inside div's), so if your code looks wonky, check for that.
+</li>
+</p>
 <div class="buttonhorizontal">
   <button onclick="window.location.href='https://www.codecademy.com/article/visual-studio-code';">VSCode setup guide for HTML</button>
   <button onclick="window.location.href='https://archiveofourown.org/works/40868577/chapters/102412968';">Ao3 Formatting Intro</button>
+</div>
+</div>
 
-</div>
-</div>
 <!--
   
 
@@ -221,29 +232,25 @@ https://archiveofourown.org/works/28934610#skin
 https://archiveofourown.org/works/39149367/chapters/99551457#workskin
 workskin tuts but not too god
 -->
-</div>
 
-<div class="easy-to-read" id="owngenerator">
+
+<div class="pt-5" id="owngenerator">
 
  <h2>How would I make my own workskin generator?</h2>
-
- If you're considering it, PLEASE let me know and I'll help you through any
- issues, as well as linking your site to this site when its finished. I'm now
- assuming you have basic knowledge of HTML/CSS and GitHub, but if not, I've linked
- a JavaScript and GitHub guide below.
- <br><br>
- I am using NeoCities to host this site, and the languages I'm using are 
- HTML, CSS, and Javascript. I'm using VSCode to build and test the site. I'm also using GitHub to automatically 
- update NeoCities, and have linked the guide for that below (as well as the actual 
+<p>
+ If you're considering it, PLEASE let me know and I'll help you through any issues, as well as linking your site to this site when its finished. IThis will require basic knowledge of HTML/CSS, JavaScript and GitHub, so I've also linked a JavaScript and GitHub guide below (I myself knew zero JavaScript when I started this).
+</p>
+<p>
+ I am using Netlify to host this site, and the languages I'm using are 
+ HTML, CSS, and JavaScript. I'm using VSCode to build and test the site. I'm also using GitHub to automatically 
+ update Netlify, and have linked the guide for that below (as well as the actual 
  Workskin Workshop Repository, of course).
- <br><br>
+</p>
+<p>
  I've tried to add a lot of comments so it's easy to follow, so you
   can clone the repository and create your own 
  generators with most of the code already there.
-
-You can also create a pull request for the repository and I'll look over it.
-Don't forget to credit yourself! 
-<br><br>
+</p>
  <div class="buttonhorizontal">
   <button onclick="window.location.href=
   'https://github.com/ultraviollett/Neocities-Workskin-Workshop/pulls';">
@@ -307,12 +314,10 @@ HTML Cheatsheet</button>
 'https://groundfloor.neocities.org/text';">
 Basic HTML for copy-pasting</button>
 
-
 </div>
 
 </div>
 
 </div>
- <br><br>
     </body>
 </html>

@@ -89,6 +89,17 @@ body {
 
 }
 
+
+kbd {
+  background-color: rgba(0, 0, 0, 0.13);
+  padding: 2px;
+  margin: -2px;
+}
+
+.dark kbd {
+  background-color: black;
+}
+
 /*
 ***************************************
 HEADER AND FOOTER
@@ -120,8 +131,11 @@ border: solid 2px var(--bluedark);
   border-color: var(--brightlight)
 }
 
-a{
+a {
   text-decoration: underline;
+  font-weight: bold;
+
+
 }
 
 a:hover{
@@ -137,11 +151,16 @@ a:hover{
 
 
 
-li {
+ul li {
   list-style-position: inside;
   list-style-type: square;
   padding-bottom: 15px;
   margin-bottom: 10px;
+}
+
+ol li {
+  list-style-type:decimal;
+  list-style-position:inside;
 }
 
 textarea {

@@ -10,36 +10,87 @@ h2::before {
 content: "## ";
 
 }
-  
-/*make buttons look nice*/
+
+p, p i, p b {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+h3 {
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 20px;
+}
+
+h3 span#html-abbr-opt, h3 span#css-abbr-opt {
+    display: inline-flex;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+
+
+}
+/*
+FOR LEGENDS
+*/
+
+a.legend-links {
+    display: block;
+    padding: 3px 15px;
+    margin: 0;
+    border-radius: 0 0 0 0;
+
+}
+
+a.legend-links:hover {
+    display: block;
+    padding: 3px 15px;
+}
+
+/*
+make buttons look nice
+*/
+
 .buttonhorizontal{
     display: flex;
     justify-content: center;
     margin: 15px auto;
     width: 100%;
-
-    gap: 5px;
+    height: fit-content;
     flex-flow: row wrap;
+    gap: 12px;
 
 }
 
 .buttonhorizontal button{
     font-size: small;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    margin: 0;
-
     display: block;
     cursor: pointer;
-    padding: auto;
+    margin: 0;
     flex-grow: 1;
+    border: 3px dotted #105b63ab;
+    padding: 3px 5px;
+    text-align: center;
     
 }
 
+.dark .buttonhorizontal button {
+    border-color: rgba(240, 248, 255, 0.787);
+}
+
+.buttonhorizontal button:hover {
+    background-color: #ffc78c;
+  }
+  
+  .dark .buttonhorizontal button:hover {
+    background-color: #105b63;
+  }
 
 /*
 for coding demos
 */
+
 .codedemo{
     display: grid;
     grid-template-columns: 1fr;
@@ -100,7 +151,7 @@ for coding demos
 }
 
 .codedemo>.text{
-    background-color: rgb(217, 243, 217);
+    background-color: rgb(216, 246, 255);
 
 }
 
@@ -133,23 +184,14 @@ for coding demos
 #usingworkshop li{
     font-weight: bold;
     font-size: larger;
+    padding: 15px 15px 0 5px;
 }
 
-.buttonhorizontal button {
-    border: 3px dotted #105b63ab;
-    padding: 3px;
-    text-align: center;
-    margin: 3px auto;
-}
+#ownworkskin li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style-position:outside;
+    list-style-type: square;
+    margin-left: 20px;
+    padding-bottom: 15px;
 
-.dark .buttonhorizontal button {
-    border-color: rgba(240, 248, 255, 0.787);
 }
-
-.buttonhorizontal button:hover {
-    background-color: #ffc78c;
-  }
-  
-  .dark .buttonhorizontal button:hover {
-    background-color: #105b63;
-  }
