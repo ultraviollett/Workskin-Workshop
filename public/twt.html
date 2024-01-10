@@ -1,4 +1,384 @@
+
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+<base target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW Poem Generator</title>
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/twt.css" id="ao3-workskin">
+    <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" integrity="sha512-H+rglffZ6f5gF7UJgvH4Naa+fGCgjrHKMgoFOGmcPTRwR6oILo5R+gtzNrpDp7iMV3udbymBVjkeZGNz1Em4rQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+  </head>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
+    <body class="generator">
+      <div>
+        <header>  
+          <button class="nav" onclick="window.location.href = 'index.html';">
+            HOME</button>
+
+
+            <div class="dark-mode-div">
+          <label for="dark-mode" id="dark-mode-label">Dark Mode</label>
+          <div class=" ml-2 mt-[6px]">
+          <input type="checkbox" class="checkbox-bipolar-input" id="dark-mode">
+          <label for="dark-mode">
+            <span class="checkbox-bipolar">
+              <span class="on">
+                L
+              </span>
+              <span class="off">
+                D
+              </span>
+            </span>
+          </label>
+          </div>
+            </div>
+        </header>
+      <div class="flex flex-wrap justify-evenly w-full align-middle ">
+      
+        <div class="w-full lg:w-2/5">
+    
+<div id="notes">
+  <p class="font-bold">NOTES:</p>
+<div class="m-7 mt-2 add-scroll">
+  <ul>
+ 
+<li>Refresh the page to start over</li>
+  </ul>
+</div >
+<div class="mb-0 mt-auto">
+<button id="show-controls" class="button-big-default">Continue to Generator <img src="CSS/img/BLUEDARKARROWDOWN.svg" width="50" id="show-controls-img"></button>
+</div>
+</div>
+
+
+<div id="controls">
+  <div class="mb-auto mt-0">
+    <button id="show-notes" class="button-big-default mb-3">Back to Notes <img src="CSS/img/BLUEDARKARROWUP.svg" width="50" id="show-notes-img"></button>
+    </div>
+
+
+<div id="controls-inputs-div" class=" overflow-scroll">
+<div>
+<h2 class="mb-4">Tweet Generator</h2>
+
+
+<form id="twt-style">
+  <fieldset>
+    <div>
+    <input type="radio" name="stylename" id="default" value = "default" checked />
+    <label for="default">AO3 default</label>
+    <input type="radio" name="stylename" id="light" value="light"/>
+    <label for="light">Light mode</label>
+    <input type="radio" name="stylename" id="dark" value="dark"/>
+    <label for="dark">Dark mode</label>
+    <input type="radio" name="stylename" id="minimal" value="minimal">
+    <label for="minimal">Minimal</label>
+    </div>
+  </fieldset>
+  </form>
+
+  
+
+
+  <select id="twt-type" class="w-fit text-sm">
+    <option val="tweet">Tweet</option>
+    <option val="replytweet">Reply to tweet</option>
+  </select>
+  <p></p>
+  
+  
+  <textarea type="url" class=" h-fit" id="input-icon" placeholder="input icon URL"></textarea>
+  
+  <select id="icon-choose" class="nice-dropdown snuggleup" onchange="pasteIconURL(document.getElementById('input-icon'),$('#icon-choose').val())">
+    <option>or pick icon here</option>
+  
+    <option>Steve Minecraft</option>
+    <option>Alex Minecraft</option>
+    <option>Herobrine Minecraft</option>
+  
+    <option>Walter White Breaking Bad</option>
+    <option>Hatsune Miku Vocaloid</option>
+    <option>X3 face</option>
+  
+    <option>Sunflowers Van Gogh</option>
+    <option>Mona Lisa</option>
+    <option>Einstein with Tongue</option>
+  
+    <option>Hong Kong Night</option>
+    <option>Railroad</option>
+    <option>Shark Sandcastle</option>
+    <option>Highway Drive</option>
+  
+  </select>
+  
+  <br>
+  
+  <textarea type="text" id="input-username" class="required" placeholder="Add username here"></textarea>
+  <textarea type="text" id="input-handle" placeholder="@"></textarea>
+  <textarea type="text" id="input-text" class="large-input required" placeholder="Add body of tweet here"></textarea>
+  <br>
+  
+  <form id="extra">
+    <fieldset>
+      
+      <input type="checkbox" id="show-quote"/><label for="show-quote"> Add Quoted Tweet?</label><br>
+      <input type="checkbox" id="show-image"/><label for="show-image"> Add Image?</label><br />
+      <input type="checkbox" id="show-poll"/><label for="show-poll"> Add Poll?</label><br />
+      <input type="checkbox" id="show-mention"/><label for="show-mention"> Add Mention?</label><br />
+    </fieldset>
+    </form>
+  
+  
+  
+  <div id="image-opt">
+  
+  <textarea type="url" class=" required largeish-input" id="input-image"  placeholder="insert image URL"></textarea>
+  
+  <input type="text" class="largeish-input" id="input-alt" placeholder="insert alt text for image (optional)">
+  <p><button id="add-image" class="simple">Add</button></p>
+  </div>
+
+  
+  
+  <div id="poll-opt" class="normal add">
+
+  
+  <p><input type="text" id="input-poll-3" placeholder="fourth poll option"></p>
+  
+  
+  <p><input type="number" id="input-votes" placeholder="# of votes"></p>
+  
+   
+  
+    <br>
+    <p><button id="add-poll" class="simple">Add</button></p>
+  </div>
+  
+  <div id="mention-opt" class="inline add">
+
+      <textarea id="input-mention" placeholder="input text"></textarea>
+
+      <button id="add-mention">Add</button>
+  </div>
+  
+  
+  
+  <div id="quote-tweet-opt" class="distinguisher">
+  
+  
+    <br>
+  
+    <textarea type="url" class="long-input" id="input-quote-icon" placeholder="insert icon URL"></textarea>
+  
+    <select id="quote-icon-choose" class="nice-dropdown" onchange="pasteIconURL( document.getElementById('input-quote-icon'), $('#quote-icon-choose').val())">
+      <option>or pick icon here</option>
+    
+      <option>Steve Minecraft</option>
+      <option>Alex Minecraft</option>
+      <option>Herobrine Minecraft</option>
+    
+      <option>Walter White Breaking Bad</option>
+      <option>Hatsune Miku Vocaloid</option>
+      <option>X3 face</option>
+    
+      <option>Sunflowers Van Gogh</option>
+      <option>Mona Lisa</option>
+      <option>Einstein with Tongue</option>
+    
+      <option>Hong Kong Night</option>
+      <option>Railroad</option>
+      <option>Shark Sandcastle</option>
+      <option>Highway Drive</option>
+  </select>
+  <br><br>
+  
+  
+  <textarea type="text"  id="input-quote-username" class="required">Name</textarea>
+  <textarea type="text" id="input-quote-handle" placeholder="@"></textarea>
+  <input type="date" id="input-quote-date">
+  <br>
+  
+  <textarea type="text" id="input-quote-text" class="large-input required" placeholder="Add body of quoted tweet here">
+  </textarea>
+  <br>
+  
+  <form id="quote-extra">
+    <fieldset>
+      <input type="checkbox" id="show-quote-image"/>
+      <label for="show-quote-image">Add Image for quoted tweet?</label><br>
+      <input type="checkbox" id="show-quote-poll"/>
+      <label for="show-quote-poll">Add Poll for quoted tweet?</label><br>
+      <input type="checkbox" id="show-quote-mention"/>
+      <label for="show-quote-mention"> Add Mention?</label><br />
+   
+    </fieldset>
+    </form>
+  
+  <div id="quote-image-opt" class="normal add">
+    <br>
+    Add image URLs: <br>
+    <textarea type="url" class="long-input required" id="input-quote-image" placeholder="insert image URL"></textarea><br>
+    <textarea type="text" class="large-input" id="input-quote-alt" placeholder="insert alt text for image (optional)"></textarea><br>
+    <button id="add-quote-image">Add</button>
+  </div>
+  
+  
+  <div id="quote-poll-opt" class="normal add">
+    <br>
+    Add poll options: <br>
+    <textarea type="text" id="input-quote-poll-1"  class="required" placeholder="first poll option"></textarea><br>
+    <textarea type="text" id="input-quote-poll-2"  class="required" placeholder="second poll option"></textarea><br>
+    <textarea type="text" id="input-quote-poll-3" placeholder="third poll option"></textarea><br>
+    <textarea type="text" id="input-quote-poll-4" placeholder="fourth poll option"></textarea>
+    <br><input type="number" id="input-quote-votes" placeholder="# of votes">
+    <button id="add-quote-poll">Add</button>
+  </div>
+  
+  <div id="quote-mention-opt" class="inline add">
+  
+      <p class="nowrap"><small>&lt;span class = "mention"&gt;</small> @
+      <textarea id="input-quote-mention" placeholder="input text"></textarea>
+      <small>&lt;/span&gt;</small></p>
+      <button id="add-quote-mention">Add</button>
+  </div>
+  
+  
+  </div>
+  
+  
+
+  
+  <input type="time" id="input-time">
+  <input type="date" id="input-date">
+  
+
+  
+  <input type="number" id="input-reply" placeholder="# of replies">
+  <input type="number" id="input-retweet" placeholder="# of retweets">
+  <input type="number" id="input-like" placeholder="# of likes">
+  
+
+
+
+
+</div>
+</div>
+  <div class="my-3">
+  <button id="add" class="w-full button-big-default ">Add</button>
+  </div>
+  
+  <div id="toggle-div" class="flex">
+<div>
+  <input type="checkbox" class="checkbox-bipolar-input" id="disabled-workskin-btn" onclick="disableWorkskin()">
+  <label for="disabled-workskin-btn">
+    <span class="checkbox-bipolar">
+      <span class="on">
+        I
+      </span>
+      <span class="off">
+        O
+      </span>
+    </span>
+  </label>
+</div>
+  <label for="disabled-workskin-btn" id="disabled-workskin-label">
+  Workskin Enabled
+  </label>
+</div>
+
+
+
+</div>
+  
+</div>
+<div id="output-and-copy">
+
+
+<div id="output-div">
+
+
+
+  <div class="twtdiv light">
+    <div class="twt">
+    <hr>
+        <span class="screenreader">-- Tweet: -- </span>
+        <div class="header">
+            <div>
+            <p><img  src="https://images.squidge.org/images/2023/09/14/00d56b33f5a708454d853fbad6d2e18a.jpeg" 
+            width="50" height="50" class="hidden" hidden alt=""></p>
+            </div>
+            <div class="name-handle-div">
+                <p class="name"><span class="screenreader">Username: </span><b>HelloWorld</b></p>
+                <p class="handle"><span class="screenreader">Handle: </span>@twitteruser</p>
+            </div>
+        </div>
+        
+        <div class="text">
+            <p> Wow, what a very nice and accessible workskin. What should I tweet today?
+            </p>
+            <div class="timestamp"><p><span class="screenreader">Posted</span> 02:00 · 2023-12-16</p></div>
+        </div>
+        
+        <table><tr>
+            <td class="reply"><p><span class="screenreader">[Replies: </span> 2 <span class="screenreader">]</span></p></td>
+            <td class="retweet"><p><span class="screenreader">[Retweets: </span> 32 <span class="screenreader">]</span></p></td>
+            <td class="like"><p><span class="screenreader">[Likes: </span> 45 <span class="screenreader">]</span></p></td>
+        </tr></table>
+        <hr>
+        </div>
+    </div>
+
+
+
+</div>
+          
+<div class="mb-0 mt-auto">
+<div id="copy-grid">
+<div id="copy-html-div">
+  <button id="copy-html-button">Copy HTML</button>
+</div>
+
+<div id="copy-css-div">
+  <button id="copy-css-button">Copy CSS</button>
+</div>
+<div id="show-copy-grid">
+  <button id="show-copy-grid-button"><img src="./CSS/img/BRIGHTARROWUP.svg" id="show-copy-grid-img">.</button>
+</div>
+</div>
+
+<div id="html-css-div">
+  <textarea type="text" id = "html-output">
+Your HTML will appear here
+    </textarea>
+
+  <textarea type="text" id = "css-to-copy">
+  </textarea>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<footer></footer>
+
+</div>
+
+
+<script src="./JS/twt.js"></script> 
+<script src="./JS/gen.js"></script>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -56,11 +436,6 @@
 </select>
 <p></p>
 
-<!--<div id="op-handle-div">
-<textarea type="url" class="long-input" id="input-op-handle" placeholder="OP's @"></textarea>
-<p></p>
-</div>-->
-
 
 <textarea type="url" class="long-input snuggledown" id="input-icon" placeholder="input icon URL"></textarea>
 
@@ -114,12 +489,12 @@
 <p>'&gt;&lt;/p&gt;</small></p>
 <p><button id="add-image">Add</button></p>
 </div>
-<!-- 
+
 <p class="twt-image">
     <img src= ' url' 
     width="400" alt="alt">
     </p> 
--->
+
 
 <div id="poll-opt" class="normal add">
     <p><small>&lt;div class="poll"&gt;&lt;p class="screenreader"&gt;-- Poll: --&lt;/p&gt;</small></p>
@@ -138,7 +513,7 @@
 
 <p><small>&lt;p class="poll-info"&gt;<input type="number" id="input-votes" placeholder="# of votes"> votes&lt;/p&gt;</small></p>
 <p><small>&lt;/div&gt;</small></p>
-<!-- 
+
  <div class="poll"><p class="screenreader">-- Poll: --</p>
 <ul>
 <li><span class="screenreader">Option: </span> Hawks</li>
@@ -147,7 +522,7 @@
 </ul>
 <p class="poll-info">4 votes · 23 hours left</p>
 </div>   
--->
+
   <br>
   <p><button id="add-poll">Add</button></p>
 </div>
@@ -244,7 +619,7 @@
 
 </div>
 
-<!--END OF QUOTE TWEET-->
+
 <p></p>
 
 <input type="time" id="input-time">

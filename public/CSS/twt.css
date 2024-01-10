@@ -21,11 +21,11 @@ tweets in a fic would become more difficult for me to provide
 
 
 .twtdiv{
-  width: 85vw;
+  width: 85%;
   max-width: 20cm;
   margin: 1em auto;
   border: 2px solid #84848477;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .twt {

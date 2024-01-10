@@ -2,7 +2,7 @@
 
 //makes sure all checkboxes are off by default
 document.getElementsByTagName('input').checked = "false";
-$("#notes").hide();
+$("#controls").hide();
 
 $("#html-css-div").hide();
 

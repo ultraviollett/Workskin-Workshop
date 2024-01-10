@@ -151,7 +151,7 @@ a:hover{
 
 
 
-ul li {
+ul li, li {
   list-style-position: inside;
   list-style-type: square;
   padding-bottom: 15px;
@@ -179,6 +179,7 @@ textarea::placeholder{
 textarea.small {
   width: inherit;
 }
+
 
 button.simple{
   border: 3px dotted #105b63ab;
@@ -627,7 +628,8 @@ https://codepen.io/alvarotrigo/pen/jOZOxNr
 }
 
 select{
-  width: 100%;
+  width: 90%;
+  margin: 5px;
   max-width: 400px;
   background-color: unset;
   border: 2px solid currentColor;

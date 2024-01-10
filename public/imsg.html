@@ -1,67 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<base target="_blank">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WW iMessage Generator</title>
+    <title>WW Poem Generator</title>
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/imsg.css" id="ao3-workskin">
     <link rel="stylesheet" href="CSS/disabledworkskin.css" id="disabled-workskin">
-    <link rel="stylesheet" href="CSS/input.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" integrity="sha512-H+rglffZ6f5gF7UJgvH4Naa+fGCgjrHKMgoFOGmcPTRwR6oILo5R+gtzNrpDp7iMV3udbymBVjkeZGNz1Em4rQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
-      
   </head>
-    <body>
-<button class="nav" onclick="window.location.href = 'index.html';">back</button>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
+    <body class="generator">
+      <div>
+        <header>  
+          <button class="nav" onclick="window.location.href = 'index.html';">
+            HOME</button>
 
-<div class="note">
-  <br><br><br>
-  <p>NOTES:</p>
-  <li>
-    This workskin exists on AO3 <a href="https://archiveofourown.org/works/22703617/chapters/54261724">here</a>!
-    To get the full functionality go to the Ao3 Work. I haven't included a
-     few things in here, like emojis, green messages,
-    and rich links, (which are insanely cool).
-</li>
-<li>
-  I've made slight changes to fit with my general style for when the workskin is disabled.
-</li>
-<li>
-  Required input / text will be marked with a thicker red left border.
-</li>
-  
-  <li>Refresh the page to start over.</li>
+
+            <div class="dark-mode-div">
+          <label for="dark-mode" id="dark-mode-label">Dark Mode</label>
+          <div class=" ml-2 mt-[6px]">
+          <input type="checkbox" class="checkbox-bipolar-input" id="dark-mode">
+          <label for="dark-mode">
+            <span class="checkbox-bipolar">
+              <span class="on">
+                L
+              </span>
+              <span class="off">
+                D
+              </span>
+            </span>
+          </label>
+          </div>
+            </div>
+        </header>
+      <div class="flex flex-wrap justify-evenly w-full align-middle ">
+      
+        <div class="w-full lg:w-2/5">
+    
+<div id="notes">
+  <p class="font-bold">NOTES:</p>
+<div class="m-7 mt-2 add-scroll">
+<li>This workskin exists on AO3 <a href="https://archiveofourown.org/works/39524436/chapters/98981022#workskin">here</a>! I am the creator.</li>
+<li>I am the creator of this workskin, but I haven't published it anywhere online</li>
+<li>Because I wanted it to be super simple, There is no way to add character names. For screenreaders / a disabled workskin, it will say 'right text:' and 'left text:'. You can replace those with character names if you want to improve the experience with a disabled workskin / for screenreaders.</li>  
+<li>Refresh the page to start over</li>
+</div >
+<div class="mb-0 mt-auto">
+<button id="show-controls" class="button-big-default">Continue to Generator <img src="CSS/img/BLUEDARKARROWDOWN.svg" width="50" id="show-controls-img"></button>
 </div>
-<br>
+</div>
 
-<!--
-<dl class="imessage grouptext ">
-  <h1 class="contact">roomies!!</h1>
-  <h4 class="time"><b>Yesterday</b>
-  </h4></div><div class="in">
-    <dt>Medusa</dt><dd>has anyone seen my shampoo</dd>
-    <dd>looks like this</dd><dd class="pic">
-      <img src="CSS/img/shampoo.png" alt="shampoo bottle for medusa">
-    </dd>
-  </div>
-  <div class="in">
-    <dt>Perseus</dt>
-    <dd>no, sorry</dd>
-    <dd>why?</dd>
-    <h4 class="time"><b>Today</b></h4>
-  </div>
-  <div class="in">
-    <dt>Medusa</dt>
-    <dd>its made specifically for my</dd>
-    <dd>yknow</dd>
-    <dd>I don't know whatll happen if someone else uses it</dd>
-    <div class="footer"><span class="typebar">I used it yesterday because I couldn't find mine</span></div></div></dl>
+<div id="controls">
+  <div class="mb-auto mt-0">
+    <button id="show-notes" class="button-big-default mb-3">Back to Notes <img src="CSS/img/BLUEDARKARROWUP.svg" width="50" id="show-notes-img"></button>
+    </div>
+<div id="controls-inputs-div">
+<div>
+<h2 class="mb-4">iMessage Generator</h2>
 
--->
-<div class="easy-to-read easy-to-read-start">
 
-<select id="group-dm-type" class="nice-dropdown big-text" onchange="switchGroupChatDm()">
+
+<select id="group-dm-type" class="w-fit m-5 mx-0" onchange="switchGroupChatDm()">
   <option>DM</option>
   <option>Groupchat</option>
 </select>
@@ -71,23 +76,19 @@
   <input type="checkbox" id="header-choose"  name="contact"/>
   <label for="header-choose" id="header-choose-label">Add contact's name for header?</label><br>
   <input type="checkbox" id="textbar-choose" name="contact"/>
-  <label for="textbar">Add textbar?</label>
+  <label for="textbar-choose">Add textbar?</label>
   </div>
 </fieldset>
 
-<div id="header-div">
-  <br>
+<div id="header-div" class="my-4">
   <textarea type="text" id="input-header" oninput="addNameForDm()" class="required" placeholder="Insert contact's name"></textarea>
 </div>
 
-<div id="textbar-div">
-  <br>
+<div id="textbar-div" class="my-4">
   <textarea type="text" id="input-textbar" placeholder="[OPTIONAL] textbar text"></textarea>
-  <br>
 </div>
 
-<p></p>
-<select id="message-type" class="nice-dropdown big-text" onchange="chooseMessageType()">
+<select id="message-type" class="w-fit my-5" onchange="chooseMessageType()">
   <option val="message">Message</option>
   <option val="timestamp">Timestamp</option>
   <option val="image">Image</option>
@@ -174,21 +175,38 @@
 </div>
 
 
-
-
-
-<button id="add">Add</button>
-
-<div id="toggle-div">
-  <label class="switch">
-  <input type="checkbox" onclick="disableWorkskin()" id="disable-workskin">
-  <span class="slider"></span>
+</div>
+</div>
+  <div class="my-3">
+  <button id="add" class="w-full button-big-default ">Add</button>
+  </div>
+  
+  <div id="toggle-div" class="flex">
+<div>
+  <input type="checkbox" class="checkbox-bipolar-input" id="disabled-workskin-btn" onclick="disableWorkskin()">
+  <label for="disabled-workskin-btn">
+    <span class="checkbox-bipolar">
+      <span class="on">
+        I
+      </span>
+      <span class="off">
+        O
+      </span>
+    </span>
   </label>
-  <label for="disable-workskin"><span id="disable-workskin-label">Workskin Enabled</span></label>
+</div>
+  <label for="disabled-workskin-btn" id="disabled-workskin-label">
+  Workskin Enabled
+  </label>
 </div>
 
 
+
 </div>
+  
+</div>
+<div id="output-and-copy">
+
 
 <div id="output-div">
 
@@ -248,32 +266,43 @@
       <hr>
   </dl>
 
+
+</div>
+          
+<div class="mb-0 mt-auto">
+<div id="copy-grid">
+<div id="copy-html-div">
+  <button id="copy-html-button">Copy HTML</button>
 </div>
 
-<br>
+<div id="copy-css-div">
+  <button id="copy-css-button">Copy CSS</button>
+</div>
+<div id="show-copy-grid">
+  <button id="show-copy-grid-button"><img src="./CSS/img/BRIGHTARROWUP.svg" id="show-copy-grid-img">.</button>
+</div>
+</div>
 
-<div class="easy-to-read">
-<br>
-<div class="html-box copy-box">
-<button id="copy-html-button"  >Copy HTML</button>
-<textarea class="large-input autoresizing" type="text" id = "html-output">
+<div id="html-css-div">
+  <textarea type="text" id = "html-output">
 Your HTML will appear here
-</textarea>
-</div>
-<br>
+    </textarea>
 
-<div class="css-box copy-box">
-  
-<button id="copy-css-button" class="autoresizing" >Copy CSS</button>
-<!--I've added some JS so this textarea grabs the text from mcpoem.txt-->
-<textarea class="large-input" type="text" id = "css-to-copy">
-</textarea>
-</div>
+  <textarea type="text" id = "css-to-copy">
+  </textarea>
 
+</div>
+</div>
+</div>
 </div>
 
 
-<script src="./JS/gen.js"></script> 
+<footer></footer>
+
+</div>
+
+
 <script src="./JS/imsg.js"></script> 
+<script src="./JS/gen.js"></script>
 </body>
 </html>
