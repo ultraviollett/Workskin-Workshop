@@ -51,6 +51,7 @@
   if you want to do so currently, there are instructions on the AO3 page linked above.
 </li>
 <li>Use the Disable Workskin button to see how your HTML looks without its workskin.</li>
+<li>You can't currently input your own background using the generator. You can find out how to do that on the Ao3 page.</li>
 <li>Refresh the page to start over.</li>
 </div >
 <div class="mb-0 mt-auto">
@@ -90,6 +91,10 @@
 
 
 <b>Input Text:</b>
+<div id="handle-opt">
+  <textarea id="input-handle" placeholder="add MC handle [optional]" class=" h-6
+w-fit"></textarea>
+</div>
 <textarea type="text" id="input-text" class="mb-3" placeholder="write text here">
 </textarea>
 
@@ -98,7 +103,7 @@
 <form id="choose-type">
 <fieldset>
 
-  <input type="radio" id="white" name="color" value="" checked/><label for="white"> Default [White]</label><br>
+  <input type="radio" id="white" name="color" value="def" checked/><label for="white"> Default [White]</label><br>
   <input type="radio" id="green" name="color" value="joinleft" /><label for="green"> Joined/Left Text [Yellow]</label><br>
   <input type="radio" id="cyan" name="color" value="whisper" /><label for="cyan"> Whispers [Grey Italics]</label>
 

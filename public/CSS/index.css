@@ -643,3 +643,7 @@ select{
   border: blue solid;
   margin: -2px;
 }
+
+input {
+  width: fit-content;
+}

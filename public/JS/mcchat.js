@@ -27,8 +27,11 @@ function addSurroundingDiv(x){
 function addNewText(){
     const type = findTextType(); //find color picked
 
-    let text = $("#input-text").val().replace(/\r?\n/g, '<br />');
+    const handle = $("#input-handle").val() ? ` &lt;${$("#input-handle").val()}&gt; ` : "";
 
+    let text = (handle + $("#input-text").val()).replace(/\r?\n/g, '<br />');
+
+    
     text = DOMPurify.sanitize( text );
 
     if (type == "joinleft"){
@@ -48,7 +51,7 @@ function addNewText(){
 
 function compileCode(add=true){
 
-    let x =  $("#input-text").val() && add ? addNewText() : "";
+    let x =  add ? addNewText() : "";
 
     x = prev + x;
 
@@ -64,11 +67,21 @@ function compileCode(add=true){
 
 $(function() {
 
+    $("#choose-type").on('change', function () {
+        const x = findTextType();
+        if (x == "def"){
+            $("#handle-opt").show();   
+        } else {
+            $("#handle-opt").hide();
+        }
+    });
+
     $('#add').on('click', function() {
         //compiles the whole code together as is currently
         compileCode();
     
         $("#input-text").val("");
+        $("#input-handle").val("");
         $('#show-colored-text').prop('checked', false);
     });
 
