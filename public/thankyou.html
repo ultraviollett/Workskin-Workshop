@@ -4,15 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/input.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="dist/output.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
     <title>WW Thank uu</title>
   </head>
   
-<body>
-<button class="nav" onclick="window.location.href = 'index.html';">back</button>
-<br><br><br>
+<body class="generator">
+  <div>
+    <header>  
+      <button class="nav" onclick="window.location.href = 'index.html';">
+        HOME</button>
 
-<div class="easy-to-read">        
-<h2>Thank you for your message!</h2>
+
+        <div class="dark-mode-div">
+      <label for="dark-mode" id="dark-mode-label">Dark Mode</label>
+      <div class=" ml-2 mt-[6px]">
+      <input type="checkbox" class="checkbox-bipolar-input" id="dark-mode">
+      <label for="dark-mode">
+        <span class="checkbox-bipolar">
+          <span class="on">
+            L
+          </span>
+          <span class="off">
+            D
+          </span>
+        </span>
+      </label>
+      </div>
+        </div>
+    </header>
+
+
+<div class="self-center p-4 rounded-lg  m-auto">        
+<h2 class=" text-3xl text-center">Thank you for your message!</h2>
 </div>
+
+</div>
+<script src="./JS/gen.js"></script>
 </body>
 </html>
